@@ -225,7 +225,9 @@ You: (I need to find something that will prove Santa didn't eat those cookies)
     Kevin: I was good all year! I even got a present that night.
     You: You got a present?
     You; (He must have eaten the cookies at midnight, he wouldn't be on the List for that year...)
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: The Persecution stands.
+    Judge: The court is adjourned for today.
+    Judge: The trial will continue tomorrow from 14:00 sharp
     You: (I was so close...)
     -> END
 + [NOTEBOOK]
@@ -238,14 +240,18 @@ You: (I need to find something that will prove Santa didn't eat those cookies)
     You: Because, he wasn't at the house?
     Judge: But he was in the houses of everyone else around the world?
     You: ...(That may have been the wrong choice.)
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: The Persecution stands.
+    Judge: The court is adjourned for today.
+    Judge: The trial will continue tomorrow from 14:00 sharp
     -> END
 + [REINDEER_SCHEDULE]
     You: The reindeers have a strict schedule of cleaning and feeding!
     Krampus: Are you saying they ate the cookies?
     Judge: I fail to see the connection.
     You: It... uh...
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: The Persecution stands.
+    Judge: The court is adjourned for today.
+    Judge: The trial will continue tomorrow from 14:00 sharp
     You: (I really messed that up...)
     -> END
 + [WRITTEN_TESTIMONY]
@@ -253,7 +259,9 @@ You: (I need to find something that will prove Santa didn't eat those cookies)
     Krampus: What? How is that relevant to the cookies?
     Judge: I fail to see the connection.
     You: It... uh...
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: The Persecution stands.
+    Judge: The court is adjourned for today.
+    Judge: The trial will continue tomorrow from 14:00 sharp
     You: (I really messed that up...)
     -> END
 + [PHOTOS]
@@ -263,7 +271,8 @@ You: (I need to find something that will prove Santa didn't eat those cookies)
     You: They, uh, show he's not at the scene of the crime?
     Krampus: These photos are not dated. It's impossible to know that.
     Judge: That's true. These photos are not sufficient for your argument.
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: The court is adjourned for today.
+    Judge: The trial will continue tomorrow from 14:00 sharp
     You: (I fumbled that...)
     -> END
 
@@ -320,5 +329,6 @@ Krampus: ...
 Judge: ...
 You: I believe I have proved my point.
 Judge: I don't think we have to continue this.
-Judge: Let's bring on the next witness.
+Judge: The court is adjourned for today.
+Judge: The trial will continue tomorrow from 14:00 sharp
 -> DONE
