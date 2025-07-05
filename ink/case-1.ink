@@ -50,7 +50,7 @@ Judge: The court accepts this as evidence.
 
 EVIDENCE:FOOTPRINTS
 
-Now, the defense may begin their cross-examination.
+Judge: Now, the defense may begin their cross-examination.
 
 EVENT:CROSS_EXAMINATION
 
@@ -196,13 +196,11 @@ You: (Is that really enough?)
 You: I'm prepared to present my arguments, Your Honour.
 Judge: Very well, you may begin.
 
-// Let's just see how the story pans out on the happy path
 You: Kevin's testimony sounds airtight, Your Honour. But there is one major contradiction in the story.
 You: Santa was not in the house in the first place. He did not eat the cookies.
 Judge: What is your reasoning?
 
 ~ wrong = !cookies && !parents && !boot
-
 
 { wrong == true:
     You:  I... I'm not sure actually.
