@@ -1,15 +1,45 @@
+using Kuroneko.UIDelivery;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ChoiceSelectPopup : MonoBehaviour
+public class ChoiceSelectPopup : Popup
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private ChoiceSelectPopupItem samplePopupItem;
+    [SerializeField] private RectTransform choiceHolder;
+    [SerializeField] private Button testimonyButton;
+    [SerializeField] private Button evidenceButton;
+
+    private ActionPopup _actionPopup;
+    
+    public void Init(ActionPopup actionPopup)
+    {
+        _actionPopup = actionPopup;
+    }
+    
+    protected override void InitPopup()
+    {
+        testimonyButton.onClick.AddListener(TestimonyButtonClicked);
+        testimonyButton.onClick.AddListener(EvidenceButtonClicked);
+    }
+
+    public override void ShowPopup()
+    {
+        base.ShowPopup();
+        TryInstantiate();
+        
+    }
+
+    private void TryInstantiate()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void TestimonyButtonClicked()
+    {
+        
+    }
+
+    private void EvidenceButtonClicked()
     {
         
     }

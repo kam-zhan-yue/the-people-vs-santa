@@ -1,15 +1,9 @@
 using UnityEngine;
 
-public class Introduction : MonoBehaviour
+public class Introduction : Game
 {
-    [SerializeField] private TextAsset inkFile;
-    private void Awake()
+    protected override void Enter()
     {
         PlayerPrefs.SetInt("Santa", 1);
-    }
-
-    private void Start()
-    {
-        
     }
 }

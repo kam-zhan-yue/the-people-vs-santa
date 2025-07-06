@@ -1,16 +1,16 @@
+using Kuroneko.UIDelivery;
 using UnityEngine;
 
-public class TestimonyPopup : MonoBehaviour
+public class TestimonyPopup : Popup
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private ActionPopup _actionPopup;
+    
+    public void Init(ActionPopup actionPopup)
     {
-        
+        _actionPopup = actionPopup;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void InitPopup()
     {
-        
     }
 }
