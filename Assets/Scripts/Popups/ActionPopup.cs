@@ -1,7 +1,5 @@
 using Kuroneko.UIDelivery;
-using Kuroneko.UtilityDelivery;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ActionPopup : Popup
 {

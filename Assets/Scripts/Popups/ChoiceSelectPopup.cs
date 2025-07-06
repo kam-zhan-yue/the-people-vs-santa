@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Ink.Runtime;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
@@ -74,7 +75,7 @@ public class ChoiceSelectPopup : Popup
     public void Select(ChoiceSelectPopupItem item)
     {
         HidePopup();
-        _game.Choose(item.Choice);
+        _game.Choose(item.Choice).Forget();
     }
 
     private void TestimonyButtonClicked()

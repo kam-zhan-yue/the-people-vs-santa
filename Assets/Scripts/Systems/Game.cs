@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Ink.Runtime;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
@@ -147,9 +148,16 @@ public abstract class Game : MonoBehaviour
         Debug.LogError($"Could not choose {evidence.name!}");
     }
 
-    public void Choose(Choice choice)
+    public async UniTask Choose(Choice choice)
     {
         _inkStory.ChooseChoiceIndex(choice.index);
+        /*
+         * When we select here, there is a race condition.
+         * Choose() and DialoguePopup.Update.
+         * In order to avoid this, we will wait a frame before setting the next state
+         * So that DialoguePopup.Update doesn't consume input
+         */
+        await UniTask.WaitForEndOfFrame();
         Continue();
     }
 }
