@@ -324,6 +324,9 @@ Kevin: NO!
 Kevin: FINE! I CONFESS!
 Kevin: I ATE THE COOKIES!
 Kevin: I DRANK THE MILK!
+Kevin: It was all because that weird short man told me I won't be on the Naughty List!
+You: A weird short man? Can you identify this person?
+Kevin: I don't know!
 Kevin: Anything but being on the Naughty List! I want my present!
 Krampus: ...
 Judge: ...

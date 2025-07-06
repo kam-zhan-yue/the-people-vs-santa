@@ -73,11 +73,8 @@ Santa: But there's only so much we can do. We're in the North Pole after all.
 Santa: The living conditions aren't exactly desirable.
 You: Buddy and his fellow elves have been on strike for the past month, demanding better wages and working conditions. It seems like they get little holidays and worker's rights?
 Santa: They're not exactly employed, it is an orphanage. But we're not registered as one officially.
-Santa: If it helps, some elves came to me the other day with a written testimony against Buddy's claims.
-You: That seems like solid evidence. I'll bring it with me.
-EVIDENCE:WRITTEN_TESTIMONY
 
-Santa: This trial has brought a lot of public eyes to my work. We've been receiving a mountain of threats each day...
+Santa: Also, this trial has brought a lot of public eyes to my work. We've been receiving a mountain of threats each day...
 You: That sounds horrible.
 Santa: I know. They've been sending threats with photos of my family and I attached. I don't know how they even got these!
 You: (You skim through the photos. There are a lot of Santa, but also of Mrs.Claus.)

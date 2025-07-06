@@ -3,237 +3,407 @@ VAR accent = false
 VAR reindeer = false
 VAR wrong = false
 
-Judge: Persecution, you may continue.
+VAR asked_organisation = false
+VAR asked_reindeer = false
+
+
+VAR asked_shed = false
+VAR asked_lock = false
+
+Judge: The court is now in session for the trial of Mr.Santa Claus.
+Krampus: The prosecution is ready, Your Honour.
+You: The defense is also ready, Your Honour.
+Judge: Very well. Let us continue where we left off yesterday.
+Krampus. Thank you, Your Honour.
 Krampus: The prosecution calls forth Ms.Rose Witherspoon, who has evidence that Santa is guilty of animal cruelty.
 Rose: It is my pleasure to be here.
 Krampus: Witness, please state your name and profession to the court.
-Rose: My name is Rose Witherspoon. I work for an animal conservation organisation.
+Rose: My name is Rose Witherspoon. I am an animal activist.
+Rose: I work for an organisation that handles rescued animals.
+Krampus: It is to my understanding that you acquired critical evidence this morning?
+Rose: Indeed. I have acquired hard, undeniable evidence of Mr.Claus's animal cruelty.
 Judge: Well, let's get into it, shall we?
 Judge: Ms.Witherspoon, please testify to the court on the evidence you have.
 Rose: It would be my pleasure.
 
 EVENT:TESTIFY
 
-Rose: I was conducting research on the status of reindeer endangerment and found that Mr.Claus was still continuing his globe-trotting adventures.
-Rose: I have photo evidence of Mr.Claus's reindeer at the North Pole.
-Rose: The photos show that the poor reindeer have leads and are forced to pull his sleigh everyday.
-Rose: Not to mention, the unrealistic amount of distance they have to cover in a single night.
-Rose: I must say, these activities are dreadfully harmful to the reindeer.
+Rose: This morning, one of Mr.Claus's reindeers showed up at our doorstep.
+Rose: It appeared to be lost and shook.
+Rose: We took the kind animal in and ran many tests on it.
+Rose: Our tests revealed that the animal was severely malnourished.
+Rose: It was visibly exhausted and showed signs of dehydration.
+Rose: As the reindeer are under supervision of Mr.Claus, it is reasonable to suspect his mistreatment of his animals.
+Krampus: Your Honour, these are the tests in question.
+Judge: The course accepts this as evidence.
 
-Krampus: Your Honour, these are the photos in question.
-Judge: The court accepts this as evidence.
-
-EVIDENCE:REINDEER_PHOTOS
+EVIDENCE:REINDEER_TESTS
 
 Krampus: It is clear that Mr.Claus is in clear violation of animal rights.
-Krampus: No reindeer should be expected to work everyday and be forced to pull a sleigh around the world.
+Krampus: No domesticated reindeer should live under those conditions.
 
 Judge: Very well, the defense may begin their cross-examination.
 
 EVENT:CROSS_EXAMINATION
 
-You: (Everything she said has been true...)
-You: (But Santa told me these were not normal reindeer!)
+You: (This is incredibly fishy...)
+You: (I'm missing too much information. I have to dig deeper.)
 -> QUESTION
 
 ===QUESTION===
-You: (I have to approach this from a different angle.)
-* [Ask about the organisation]
-    -> ORGANISATION
-* [Ask about the photos]
-    -> PHOTOS
-* [Ask about the reindeer]
-    -> REINDEER
-* [I have no questions]
-    -> ARGUMENT
+You: (There are too many pieces missing...)
 
-===ORGANISATION===
-You: The organisation you work for, what do they do?
-Rose: Why, we simply investigate cases of rare endangered animals around the world and how they can be conserved.
-Rose: I do a bunch of work with conservation sites in many different countries.
-You: What other animals do you work with?
-Rose: We look into pangolins, tortoises, rhinos, and more.
-Rose: There are so many poor animals around the world.
-->ORGANISATION_QUESTION
-
-===ORGANISATION_QUESTION===
-You: (Pangolins, tortoises, rhinos... There seems to be a common theme.)
-* [That's an interesting range of animals]
-    Rose: Of course. We only research the most exotic species.
-    You: You don't just research any endangered species?
-    You: What makes them so special?
-    Krampus: Objection! Irrelevant.
-    Judge: Denied.
-    Rose: Why, uh, because they're highly sought after!
-    You: Highly sought after for what, exactly?
-    Rose: They just are! I just do my job!
-    You: And what is your job exactly?
-    Rose: I investigate endangered animals!
-    Krampus: Badgering!
-    Judge: Granted. Wrap up this question.
-    You: (I think there was something there...)
-    ~ organisation = true
-    -> ORGANISATION_QUESTION
-* [That's an interesting accent]
-    Rose: Haha, why yes. I was born and raised in England.
-    You: And where do you work now?
-    Krampus: Objection! Irrelevant.
-    Judge: Denied.
-    Rose: Why we look into cases all around the world.
-    You: Your Honour, the witness is not answering the question.
-    Judge: Granted. Ms.Witherspoon, please answer the question.
-    Rose: We work from Beijing, China.
-    You: And why did you move from England to China?
-    Rose: The pay was much better. And I get to do what I love to do.
-    You: And what is that exactly?
-    Rose: I work closely with exotic animals!
-    You: You work with exotic animals... not endangered animals?
-    Rose: Ack! I mean...
-    Rose: I work with exotic, endangered animals.
-    Krampus: Your Honour, this is highly irrelevant.
-    Krampus: My witness doesn't need to be interrogated on what she does.
-    Krampus: She works for a highly reputible organisation.
-    Judge: Very well, we may proceed onwards.
-    You: (I think there was something there...)
-    ~ accent = true
-    -> ORGANISATION_QUESTION
-* [Stop]
-    -> QUESTION
-
-===PHOTOS===
-You: These photos you acquired. How did you acquire them?
-Rose: I'm a researcher. It's my job to find these things.
-You: So you're telling me that you went to the North Pole to take these photos?
-Rose: Of course! I do anything for my job.
-You: Was there anything else you did at the North Pole?
-Rose: I saw the aurora! It was beautiful.
-You: (Hmm, seems like there was nothing there.)
--> QUESTION
-
-===REINDEER===
-You: Why do you know so much about the reindeer that Santa has?
-Rose: I know everything there is to know about reindeers. What they eat, when they sleep, where they live.
-You: And you are aware that reindeer have been used domestically by humans for thousands of years?
-Rose: Of course. But my evidence shows that Mr.Claus is clearly mistreating them day by day.
-You: The defendant has had these reindeer since they were calves.
-Rose: Then there is a possiblity they were mistreated since they were calves, no?
-Judge: No conjectures here. Lets move on.
-You: (I set myself back a little, but she's obviously interested in Santa's reindeers...)
-~reindeer = true
--> QUESTION
-
-===ARGUMENT===
-You: I'm prepared to present my arguments, Your Honour.
-Judge: Very well, you may begin.
-
-You: The facts presented in Rose's testimony is true.
-You: However, there's something that Rosa is not sharing with the court today.
-Krampus: And what might that be?
-Judge: Present your reasoning.
-
-~ wrong = !organisation && !reindeer && !accent
-
-{ wrong == true:
-    You:  I... I'm not sure actually.
-    You: (I should have asked for more details...)
-    Judge: Is this a joke? The Persecution's side holds.
-    -> END
-- else:
-    You: Let me bring out my final piece of evidence.
-    -> EVIDENCE
+{ asked_organisation == false:
+    * [Ask about the organisation]
+        -> ORGANISATION
 }
 
-===EVIDENCE===
-EVENT:EVIDENCE
-You: (I need to find something that will expose Rose for who she truly is.)
+{ asked_reindeer == false:
+    * [Ask about the reindeer]
+        -> REINDEER
+}
+
+{ asked_organisation == true and asked_reindeer == true:
+    -> ALL_ASKED
+}
+
+===ORGANISATION_1===
+-> DONE
+
+===ORGANISATION===
+~asked_organisation = true
+You: The organisation you work for, what do they do?
+Rose: As I mentioned previously, I work for an organisation that rescues animals.
+You: When you say rescues animals, do you mean pick them up from the side of the road?
+Rose: We do that too, but we also act upon reports of abuse and liberate those animals.
+You: At what extent do you 'liberate' these animals?
+Rose: Well, to put it simply, we take them from their owners until they are deemed safe.
+Krampus: Your Honour, I would like to clarify that my witness's organisation has the authority to act on these requests.
+Krampus: They are part of a government branch with powers related to animal rights.
+Judge: Very well, that is accepted.
+You: (Not much traction to be gained there.)
+-> QUESTION
+
+
+===REINDEER===
+~asked_reindeer = true
+You: You said that the reindeer just showed up at your doorstep. Why do you think that is?
+Rose: There could be many different reasons. I couldn't tell you for certain.
+Rose: From what it looked like, the reindeer was very disoriented. It seemed to have been completely lost.
+Krampus: A lost reindeer. How reflective of the owner's diligence and care towards his animals.
+You: (I see. It seems the reindeer was at the right place at the right time...)
+-> QUESTION
+
+===ALL_ASKED===
+You: Your Honour, everything the witness said seems to check out.
+You: However, there is a key piece of evidence that will prove my defendant's innocence.
+Judge: You may present it.
+You: (I need to find something that will show that the reindeer were looked after.)
 + [HEALTH_REPORT]
-    You: Santa's health report!
-    Judge: ...
-    Krampus: Shows absolutely nothing.
-    You: (Worth a shot?)
-    Judge: The Persecution stands. Let's bring on the next witness.
+    You: This health report!
+    Krampus: The Defense is grasping for straws, Your Honour.
+    Judge: I don't tolerate this nonsense. The court is dismissed.
+    You: (I messed that up...)
+    -> END
++ [NAUGHTY_LIST]
+    You: The Naughty List!
+    Krampus: ...doesn't show anything.
+    Judge: I don't see the connection here. 
+    Judge: I see no reason to continue. The court is dismissed.
+    You: (I messed that up...)
+    -> END
++ [NOTEBOOK]
+    You: This notebook shows Santa's exact route he took that night!
+    Krampus: And?
+    Judge: I don't see the connection here. 
+    Judge: I see no reason to continue. The court is dismissed.
+    You: (I messed that up...)
+    -> END
++ [REINDEER_SCHEDULE]
+    -> REINDEER_CONTINUE
++ [WRITTEN_TESTIMONY]
+    You: This written testimony shows that Santa is treating the elves fairly!
+    Krampus: And?
+    Judge: I don't see the connection here. 
+    Judge: I see no reason to continue. The court is dismissed.
+    You: (I messed that up...)
+    -> END
++ [PHOTOS]
+    You: The photos prove his innocence!
+    Judge: What... do they prove exactly?
+    Krampus: These are just photos of Santa... and Mrs.Claus?
+    Judge: I don't see the connection here. 
+    Judge: I see no reason to continue. The court is dismissed.
+    You: (I messed that up...)
+    -> END
+-> DONE
+
+===REINDEER_CONTINUE===
+You: This is a copy of the detailed caretaking schedule of each of the reindeers.
+You: Going through it, you can see that their feeding times, hygeine, and health are regularly recorded.
+You: It is clear that the reindeer were supposed to be looked after.
+Krampus: However, the evidence clearly shows that they were not.
+Krampus: Ms.Witherspoon carefully showed that.
+You: I'm not saying the reindeers weren't mistreated. I'm saying it wasn't Santa.
+Judge: Who was it then?
+-> ACCUSE
+
+===ACCUSE===
+You: (Who might be responsible for the reindeer when Santa's not there?)
+ * [The elves]
+    Judge: An interesting proposition.
+    Judge: But what evidence do you have to support this statement?
+    -> ELF_EVIDENCE
+ * [Rose Witherspoon]
+    Rose: What? How am I responsible for feeding the reindeer?
+    You: You lured it in with the scent of food!
+    Krampus: These are baseless accusations.
+    You: (That's true, I have no evidence for this...)
+    -> ACCUSE
+ * [Krampus]
+    Krampus: What? On what grounds?
+    You: (That's true, I have no evidence for this...)
+    -> ACCUSE
+
+===ELF_EVIDENCE===
++ [REINDEER_SCHEDULE]
+    You: This document shows the daily schedules for all of Santa's reindeers.
+    You: It details their times for feeding, cleaning, and exercise.
+    You: And the individuals responsible for this are none other than the elves!
+    Krampus: Your Honour, even if that were true, it doesn't hide the fact that Mr.Claus is responsible for the elves, and ergo the reindeer.
+    Judge: That is true. We can only resolve this if we hear from a representative of the elves.
+    Judge: Prosecution, do you have someone willing to testify for this?
+    You: (Oh no, did Krampus see this coming?)
+    Krampus: Indeed. My next witness is none other than the elf responsible for the reindeer.
+    Krampus: And he can testify at length to Santa's mistreatment.
+    You: (It was a setup! I'll have to be more careful next time.)
+    -> CONTINUE
++ [HEALTH_REPORT]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
     You: (I really messed that up...)
     -> END
 + [NAUGHTY_LIST]
-    -> CORRECT
-+ [NOTEBOOK]
-    You: This notebook shows Santa's exact route on Christmas night!
-    Judge: This notebook shows that Santa traversed the globe several times.
-    Krampus: Your Honour, this just works to prove Ms.Witherspoon's point.
-    Krampus: Reindeer should not be subject to this treatment.
-    Krampus: Yet alone any animal.
-    Judge: Defense, are you working for or against your defendant?
-    You: ...(That may have been the wrong choice.)
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
     -> END
-+ [REINDEER_SCHEDULE]
-    You: This document shows the reindeer's cleaning, feeding, and training regiment!
-    Krampus: Amazing. This document shows everything my witness is testifying about.
-    Krampus: The reindeer literally work everyday and are held in forced captivity.
-    Judge: Defense, what do you have to say about that?
-    You: Um...
-    You: (I thought that was it!)
-    Judge: The Persecution stands. Let's bring on the next witness.
++ [NOTEBOOK]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
     -> END
 + [WRITTEN_TESTIMONY]
-    You: This written testimony shows that Santa is treating the elves fairly!
-    Krampus: This is not relevant.
-    Judge: I fail to see the connection.
-    Judge: The Persecution stands. Let's bring on the next witness.
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
     You: (I really messed that up...)
     -> END
 + [PHOTOS]
-    You: The photos sent along the threats are from Ms.Witherspoon!
-    Rose: That isn't the film I use.
-    Judge: She's right. The photos are clearly different from one another.
-    Krampus: You also cannot prove Ms.Witherspoon took those photos for sure.
-    Judge: That's true. These photos are not sufficient for your argument.
-    Judge: The Persecution stands. Let's bring on the next witness.
-    You: (I fumbled that...)
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
     -> END
+    
+===CONTINUE===
+Krampus: Ms.Witherspoon, thank you for your cooperation.
+Krmapus: The prosecution calls forth Buddy the Elf.
+Buddy: That's me.
+Krampus: Witness, please state your name and occupation to the court.
+Buddy: It's Buddy the Elf. No last name. I'm the elf responsible for Santa's reindeer.
+Krampus: Buddy, is it true that Santa's reindeer are mistreated?
+Buddy: Oh yeah. With a capital 'O'.
+Buddy: I'm resposible for the poor guys, but I dont get enough resources to take care of them.
+Buddy: I mean, there are 9 of these dudes. Each of them super magical and super strong.
+Buddy: And you expect a mere kid to handle all of these?
+Buddy: It's a recipe for disaster, I'm telling you.
+Buddy: Not to mention the working conditions my fellow elves and I go through day-by-day.
+Buddy: It's not our fault we can't take care of the reindeer when we can't take care of ourselves.
+You: (This is escalating...)
+Judge: Are you willing to testify to the court on the events of last night?
+Buddy: Oh yeah, I can.
+Buddy: You better buckle in your belts for this one.
+Judge: Very well, you may begin.
 
-===CORRECT===
-You: Rose Witherspoon is not who you think she is.
-You: She does not work for an animal conservation organisation.
-You: She's an animal trafficker!
-Krampus: That is an outlandish statement! Your Honour!
-Judge: That is true. Such accusations cannot be made baselessly.
-You: These are not baseless, Your Honour. This document will show it all.
-Judge: The Naughty List? I am aware of its... reputible status.
-Krampus: Even if her name is on the list, it mean anything!
-Krampus: She could be on the list for any number of reasons.
-You: Let's read what the Naughty List says.
-You: Rose Witherspoon. Animal Cruelty.
-You: (My bet paid off!)
-Rose: How dare you!
-Judge: The List... doesn't lie. The court aware of its properties.
-Krampus: Even if the List is true, how can you tie this to your accusation?
+EVENT:TESTIFY
 
-{ organisation == true:
-    You: Ms.Witherspoon failed to elaborate on what she does for work.
-    You: The fact that she is an "animal conservationist" and is accounted for "animal cruelty" makes her job questionable.
-    You: There were also mentions of exotic animals, not endangered.
+Buddy: So there I was at night. All foggy and dark.
+Buddy: When I heard shrieks coming from the shed!
+Buddy: As I approached the shed, Prancer bursts from the shed door!
+Buddy: He must have been so desperate to escape, the poor animal.
+Buddy: I chased after him, but couldn't catch up.
+Buddy: By the time I got back, the others had already reported him as missing.
+-> BUDDY_QUESTION
+
+
+===BUDDY_QUESTION===
+You: (He has to be lying. I'll need something to contradict his testimony...)
+
+{ asked_shed == false:
+    * [Ask about the shed]
+        -> BUDDY_SHED
 }
 
-{ accent == true:
-    You: Ms.Witherspoon works in China. In a job with high pay. Where animals are repeatedly trafficked.
-    You: There's not many opportunities that are not also present in England.
+{ asked_lock == false:
+    * [Ask about the lock]
+        -> BUDDY_LOCK
 }
 
-{ reindeer == true:
-    You: Ms.Witherspoon has also expressed deep interest in the defendant's reindeer.
-    You: And of course she would.
-    You: These are reindeer that are thousands of years old and can fly.
-    You: There is obvious motive here.
+{ asked_organisation == true and asked_reindeer == true:
+    -> BUDDY_ALL_ASKED
 }
 
-You: Ms.Witherspoon, what exactly do you do for work?
-You: A reminder that everything you say will be held to court.
-Rose: ...
-Krampus: My witness refuses to answer the question.
-Judge: Very well, the Defense does not have concrete evidence.
-Judge: However, the refusal to answer does hurt Ms.Witherspoon's credibility.
-Judge: This is a conflict of interest. The testimony is not valid.
-You: Thank you, Your Honour.
+===BUDDY_SHED===
+~asked_shed = true
+You: Are all of Santa's reindeer kept in that shed?
+Buddy: Yeap, they're all stuffed in there ike sardines.
+Buddy: I keep telling everyone there's not enough space, but no one listens.
+You: If that's the case. Why did only Prancer escape once the lock was broken?
+Buddy: Huh? ... The others must have been shocked, I guess?
+You: But if all of the reindeer were being mistreated, wouldn't all of them feel desperate to escape?
+Buddy: That may be true, but...
+Buddy: There's no way to tell right! We can't make the reindeer testify!
+-> BUDDY_SHED
 
--> DONE
+===BUDDY_LOCK===
+~asked_lock = true
+You: The lock that secured it, how was it broken?
+Buddy: The reindeer are freakishly strong. I mean, they fly around the world.
+Buddy: It's very likely that Prancer broke it out of desperation.
+-> BUDDY_QUESTION
+
+
+===BUDDY_ALL_ASKED===
+You: Well, Your Honour. I'm ready to present my case.
+Judge: Very well, you may begin.
+You: (I need to show that Buddy was with Prancer the entire time...)
+
++ [REINDEER_SCHEDULE]
+    You: This schedule!
+    Judge: Bringing it up again?
+    You: It shows that the reindeer were meant to be fed before escaping!
+    Buddy: We didn't have enough food to feed them. Of course they'd go hungry.
+    Judge; There's no need to bring this evidence up again.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [HEALTH_REPORT]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [NAUGHTY_LIST]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [NOTEBOOK]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [PHOTOS]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [ATTENDANCE]
+    -> BUDDY_CONTINUE
+
+
+===BUDDY_CONTINUE===
+You: This morning. Santa took the elves' attendance.
+You: And curiously... there was one elf missing from this list.
+You: That elf is you, Buddy!
+You: Where were you at the time of the attendance?
+Buddy: Me? I was still out trying to find Prancer.
+Buddy: He's my darling.
+Krampus: Buddy, I believe you have hard evidence to prove this as well, no?
+You: (Evidence?!)
+Buddy: Of course. I was taking photos of his footprints as I went
+EVIDENCE:FOOTPRINT_PHOTOS
+You: (Do these look familiar?)
+Buddy: Unfortunately, I couldn't find him.
+You: That's interesting that you bring these up.
+You: Because I've got something even better.
++ [REINDEER_SCHEDULE]
+    You: This schedule!
+    Judge: Bringing it up again?
+    You: It shows that the reindeer were meant to be fed before escaping!
+    Buddy: We didn't have enough food to feed them. Of course they'd go hungry.
+    Judge; There's no need to bring this evidence up again.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [HEALTH_REPORT]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [NAUGHTY_LIST]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [NOTEBOOK]
+    Judge: I don't see how that is relevant.
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
++ [PHOTOS]
+    -> FINAL
++ [ATTENDANCE]
+    Judge: Why are we seeing this again?
+    Judge: The Persecution stands. The case is dismissed.
+    You: (I really messed that up...)
+    -> END
+-> END
+
+
+===FINAL===
+You: These photos came with threats addressed to Santa.
+Krampus: And how are these relevant?
+You: Look carefully at the film and the camera angles.
+Krampus: That shows nothing.
+You: They're the same.
+Krampus: You can't prove that.
+You: I can. We can confirm this if we looked at Buddy's camera.
+Buddy: That's not allowed!
+Judge: Order in the court. Defense, please continue.
+You: I was wondering why these photos were so close up. There's no way a normal journalist could have taken these.
+You: These photos were taken by Buddy. He perpetuated this event. The entire trial.
+You: You convinced Kevin to frame Santa to not be on the Naughty List.
+Buddy: Did not!
+You: You took illicit photos of Santa and attached them with threats to intimidate him.
+Buddy: That wasn't me!
+You: I've always been wondering. Why are there so many photos of Mrs.Claus mixed in here?
+You: Until I realised. This isn't about Santa. This is about you and her!
+You: Your Honour, this is a crime of passion.
+Judge: What are you talking about?
+Buddy: I don't know... what you mean...
+Krampus: Objection! Baseless accusations!
+Judge: Defense, wrap it up.
+You: If we open Buddy's camera. I think we'll find a lot more than just photos of reindeer.
+Buddy: ...
+You: And just conveniently, he brought it to the courtroom.
+Buddy: No! Don't take it from me!
+Buddy: Fine! I did it! I let Prancer go!
+You: And the mistreatment?
+Buddy: I didn't feed him for several days...
+You: And the kid?
+Buddy: I told him to eat the milk and cookies!
+Krampus: ...
+Judge: ...
+Buddy: You don't understand! It was out of love!
+Buddy: None of you would understand it!
+Buddy: He doesn't deserve her! He doesn't deserve any of it!
+You: I think we've heard enough.
+Judge: I agree. This case is closed.
+-> END
+
+
+
+
+
+
+
+
