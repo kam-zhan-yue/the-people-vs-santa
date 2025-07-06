@@ -37,6 +37,7 @@ public abstract class Game : MonoBehaviour
     private Story _inkStory;
 
     protected abstract void Enter();
+    protected abstract void Exit();
 
     protected virtual void Awake()
     {
@@ -86,6 +87,7 @@ public abstract class Game : MonoBehaviour
         }
         else
         {
+            Exit();
             popups.CheckEndGame();
         }
     }

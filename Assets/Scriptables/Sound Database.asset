@@ -31,3 +31,7 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: 9b227b08c0d33437a94d26485775fff5, type: 2}
   - id: SHAKE
     config: {fileID: 11400000, guid: 9f22f6647b310430ba9a7e2c574a5ec7, type: 2}
+  - id: INTRODUCTION
+    config: {fileID: 11400000, guid: 94ddfd20e3f38461f8134029b84e8a0a, type: 2}
+  - id: MAIN_MENU
+    config: {fileID: 11400000, guid: 669e6d84cd7454aaebd98cd31689a0ae, type: 2}

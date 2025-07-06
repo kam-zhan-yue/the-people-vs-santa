@@ -1,3 +1,4 @@
+using Kuroneko.AudioDelivery;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class StartPopup : Popup
         mainMenuPopup.Init(this);
         levelSelectPopup.Init(this);
         ShowMainMenu();
+    }
+
+    private void Start()
+    {
+        ServiceLocator.Instance.Get<IAudioService>().Play("MAIN_MENU");
     }
 
     public void ShowMainMenu()

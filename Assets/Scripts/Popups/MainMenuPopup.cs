@@ -1,4 +1,6 @@
+using Kuroneko.AudioDelivery;
 using Kuroneko.UIDelivery;
+using Kuroneko.UtilityDelivery;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,11 +25,14 @@ public class MainMenuPopup : Popup
 
     private void StartButtonPressed()
     {
+        ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
+        ServiceLocator.Instance.Get<IAudioService>().Stop("MAIN_MENU");
         SceneManager.LoadScene("Prologue");
     }
 
     private void ContinueButtonPressed()
     {
+        ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
         _startPopup.ShowLevelSelect();
     }
 }

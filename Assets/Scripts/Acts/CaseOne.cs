@@ -6,4 +6,8 @@ public class CaseOne : Game
     {
         PlayerPrefs.SetInt("Case One", 1);
     }
+
+    protected override void Exit()
+    {
+    }
 }

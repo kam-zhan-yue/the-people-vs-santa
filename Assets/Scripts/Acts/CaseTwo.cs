@@ -6,4 +6,9 @@ public class CaseTwo : Game
     {
         PlayerPrefs.SetInt("Case Two", 1);
     }
+
+    protected override void Exit()
+    {
+        throw new System.NotImplementedException();
+    }
 }
