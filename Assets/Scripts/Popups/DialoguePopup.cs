@@ -24,6 +24,11 @@ public class DialoguePopup : Popup
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        {
+            ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
+        }
+
         if (_game.State != GameState.Dialogue)
             return;
         

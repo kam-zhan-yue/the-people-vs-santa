@@ -28,4 +28,4 @@ MonoBehaviour:
   - id: JUDGE
     config: {fileID: 11400000, guid: 09f26d9fcb4914ff3b647ef31ebcdc2b, type: 2}
   - id: CLICK
-    config: {fileID: 0}
+    config: {fileID: 11400000, guid: 9b227b08c0d33437a94d26485775fff5, type: 2}
