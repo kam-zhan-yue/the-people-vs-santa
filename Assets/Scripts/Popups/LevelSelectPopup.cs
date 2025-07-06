@@ -30,11 +30,11 @@ public class LevelSelectPopup : Popup
         caseTwoButton.onClick.AddListener(() => StartScene("Case Two"));
         backButton.onClick.AddListener(BackButtonPressed);
 
-        prologueButton.enabled = PlayerPrefs.HasKey("Prologue");
-        santaButton.enabled = PlayerPrefs.HasKey("Introduction");
-        caseOneButton.enabled = PlayerPrefs.HasKey("Case One");
-        prologueButton.enabled = PlayerPrefs.HasKey("Event");
-        caseTwoButton.enabled = PlayerPrefs.HasKey("Case Two");
+        // prologueButton.enabled = PlayerPrefs.HasKey("Prologue");
+        // santaButton.enabled = PlayerPrefs.HasKey("Introduction");
+        // caseOneButton.enabled = PlayerPrefs.HasKey("Case One");
+        // prologueButton.enabled = PlayerPrefs.HasKey("Event");
+        // caseTwoButton.enabled = PlayerPrefs.HasKey("Case Two");
     }
 
     private void StartScene(string sceneName)

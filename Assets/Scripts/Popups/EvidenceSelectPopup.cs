@@ -8,11 +8,11 @@ using UnityEngine.UI;
 
 public class EvidenceSelectPopup : Popup
 {
+    [SerializeField] private EvidenceSelectPopupItem[] popups;
     [SerializeField] private TMP_Text displayName;
     [SerializeField] private TMP_Text description;
     [SerializeField] private Button backButton;
     [SerializeField] private Button presentButton;
-    private EvidenceSelectPopupItem[] _popupItems;
     private EvidenceSelectPopupItem _selected;
     private bool _interactable = false;
     private ActionPopup _actionPopup;
@@ -28,14 +28,14 @@ public class EvidenceSelectPopup : Popup
     {
         backButton.onClick.AddListener(BackButtonClicked);
         presentButton.onClick.AddListener(PresentButtonClicked);
-        _popupItems = GetComponentsInChildren<EvidenceSelectPopupItem>();
-        for (int i = 0; i < _popupItems.Length; ++i)
-            _popupItems[i].Init(this);
+        for (int i = 0; i < popups.Length; ++i)
+            popups[i].Init(this);
     }
 
     public void Show(bool interactable = false)
     {
         ShowPopup();
+        _selected = null;
         _interactable = interactable;
         backButton.gameObject.SetActiveFast(!_interactable);
         ShowItems();
@@ -44,27 +44,25 @@ public class EvidenceSelectPopup : Popup
 
     private void ShowItems()
     {
-        for (int i = 0; i < _popupItems.Length; ++i)
+        for (int i = 0; i < popups.Length; ++i)
         {
-            _popupItems[i].SetEmpty();
+            popups[i].SetEmpty();
         }
         List<Evidence> evidences = _game.GetEvidence();
         for (int i = 0; i < evidences.Count; ++i)
         {
-            if (i < _popupItems.Length)
+            if (i < popups.Length)
             {
-                _popupItems[i].gameObject.SetActiveFast(true);
-                _popupItems[i].Show(evidences[i]);
+                popups[i].gameObject.SetActiveFast(true);
+                popups[i].Show(evidences[i]);
             }
         }
     }
 
     private void SelectFirstItem()
     {
-        if (_popupItems.Length > 0)
-        {
-            Select(_popupItems[0]);
-        }
+        if (popups.Length > 0)
+            Select(popups[0]);
     }
 
     public void Select(EvidenceSelectPopupItem item)
