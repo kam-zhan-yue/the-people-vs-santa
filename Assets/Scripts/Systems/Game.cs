@@ -22,6 +22,7 @@ public abstract class Game : MonoBehaviour
     public GameDatabase database;
     public List<Evidence> startingEvidence = new();
     [SerializeField] private TextAsset inkFile;
+    [SerializeField] private SpeakerPopup speakerPopup;
     [SerializeField] private DialoguePopup dialoguePopup;
     [SerializeField] private ActionPopup actionPopup;
 
@@ -37,6 +38,7 @@ public abstract class Game : MonoBehaviour
 
     protected virtual void Awake()
     {
+        speakerPopup.Init(this);
         dialoguePopup.Init(this);
         actionPopup.Init(this);
         foreach (Evidence evidence in startingEvidence)
@@ -51,6 +53,11 @@ public abstract class Game : MonoBehaviour
     public List<Choice> GetChoices()
     {
         return _inkStory.currentChoices;
+    }
+
+    public List<string> GetCurrentTags()
+    {
+        return _inkStory.currentTags;
     }
 
     protected virtual void Start()
@@ -98,6 +105,7 @@ public abstract class Game : MonoBehaviour
         else
         {
             State = GameState.Dialogue;
+            speakerPopup.Show(lineOne);
             dialoguePopup.ShowDialogue(lineOne, lineTwo);
         }
     }

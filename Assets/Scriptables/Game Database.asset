@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a227ac2d8cfc047d39a85d42501ff275, type: 3}
   m_Name: Game Database
   m_EditorClassIdentifier: 
+  speakerList:
+  - {fileID: 11400000, guid: 7be29905052c945f2a7453f6c8fb0390, type: 2}
+  - {fileID: 11400000, guid: 000e3fc177470456b9199bc89bfa58cb, type: 2}
+  - {fileID: 11400000, guid: fc99f3ebc6f604674a3290d56e53135f, type: 2}
+  - {fileID: 11400000, guid: 99652857c682a4529bcc5729a70f9317, type: 2}
+  - {fileID: 11400000, guid: d7d38fd8b7ac941e8bf43a2e1da59df8, type: 2}
+  - {fileID: 11400000, guid: 486480477a93747bca2a2a8811a95ca1, type: 2}
+  - {fileID: 11400000, guid: 78a8a36eef71146689344821e257bfcd, type: 2}
   evidenceList:
   - {fileID: 11400000, guid: 99e014bc9be614bb28606e80ceb1298c, type: 2}
   - {fileID: 11400000, guid: bdc0ebfe3bd1f48a39d99c6978ccae9c, type: 2}
