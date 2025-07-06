@@ -16,6 +16,7 @@ public abstract class Game : MonoBehaviour
 {
     private const string EVIDENCE = "EVIDENCE";
     private const string EVENT = "EVENT";
+    private const string SHAKE = "SHAKE";
     private const string TESTIFY = "TESTIFY";
     private const string CROSS_EXAMINATION = "CROSS_EXAMINATION";
 
@@ -127,17 +128,23 @@ public abstract class Game : MonoBehaviour
             if (splits.Length < 2)
             {
                 Debug.LogError($"Could not process TESTIFY at {eventId}");
-                _inkStory.Continue();
+                Continue();
             }
             else
             {
                 TestimonyID = splits[1];
+                Continue();
             }
         }
         else if (eventId.StartsWith(CROSS_EXAMINATION))
         {
             // TODO: Make a flashy title here
             _inkStory.Continue();
+        }
+        else if (eventId.StartsWith(SHAKE))
+        {
+            popups.Shake();
+            Continue();
         }
         else if (eventId.StartsWith(EVIDENCE))
         {
