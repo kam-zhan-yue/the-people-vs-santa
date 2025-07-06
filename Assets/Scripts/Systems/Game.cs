@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Ink.Runtime;
+using Kuroneko.AudioDelivery;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
 
@@ -10,13 +11,13 @@ public enum GameState
     Evidence,
     ChoiceSelect,
     EvidenceSelect,
+    Over,
 }
 
 public abstract class Game : MonoBehaviour
 {
     private const string EVIDENCE = "EVIDENCE";
     private const string EVENT = "EVENT";
-    private const string SHAKE = "SHAKE";
     private const string TESTIFY = "TESTIFY";
     private const string CROSS_EXAMINATION = "CROSS_EXAMINATION";
 
@@ -72,6 +73,19 @@ public abstract class Game : MonoBehaviour
         Enter();
         _inkStory = new Story(inkFile.text);
         _inkStory.BindExternalFunction("complete", SetCompleted);
+        _inkStory.BindExternalFunction("shake", Shake);
+        _inkStory.BindExternalFunction("play", (string id) =>  {
+            PlayAudio(id);
+        });
+        _inkStory.BindExternalFunction("pause", (string id) =>  {
+            PauseAudio(id);
+        });
+        _inkStory.BindExternalFunction("resume", (string id) =>  {
+            ResumeAudio(id);
+        });
+        _inkStory.BindExternalFunction("stop", (string id) =>  {
+            StopAudio(id);
+        });
     }
 
     public void Continue()
@@ -87,6 +101,7 @@ public abstract class Game : MonoBehaviour
         }
         else
         {
+            State = GameState.Over;
             Exit();
             popups.CheckEndGame();
         }
@@ -143,11 +158,6 @@ public abstract class Game : MonoBehaviour
             // TODO: Make a flashy title here
             _inkStory.Continue();
         }
-        else if (eventId.StartsWith(SHAKE))
-        {
-            popups.Shake();
-            Continue();
-        }
         else if (eventId.StartsWith(EVIDENCE))
         {
             State = GameState.EvidenceSelect;
@@ -203,5 +213,30 @@ public abstract class Game : MonoBehaviour
     private void SetCompleted()
     {
         Completed = true;
+    }
+
+    private void PlayAudio(string id)
+    {
+        ServiceLocator.Instance.Get<IAudioService>().Play(id);
+    }
+
+    private void PauseAudio(string id)
+    {
+        ServiceLocator.Instance.Get<IAudioService>().Pause(id);
+    }
+
+    private void ResumeAudio(string id)
+    {
+        ServiceLocator.Instance.Get<IAudioService>().Resume(id);
+    }
+
+    private void StopAudio(string id)
+    {
+        ServiceLocator.Instance.Get<IAudioService>().Stop(id);
+    }
+
+    private void Shake()
+    {
+        popups.Shake();
     }
 }

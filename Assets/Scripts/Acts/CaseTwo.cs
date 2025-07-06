@@ -1,3 +1,5 @@
+using Kuroneko.AudioDelivery;
+using Kuroneko.UtilityDelivery;
 using UnityEngine;
 
 public class CaseTwo : Game
@@ -9,6 +11,7 @@ public class CaseTwo : Game
 
     protected override void Exit()
     {
-        throw new System.NotImplementedException();
+        ServiceLocator.Instance.Get<IAudioService>().Stop("CASE_START");
+        ServiceLocator.Instance.Get<IAudioService>().Stop("CASE_BREAK");
     }
 }

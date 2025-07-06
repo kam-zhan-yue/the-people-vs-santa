@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dc514b984f8ee74eb10d3180f200a69, type: 3}
-  m_Name: You
+  m_Name: BGM_Case_Break
   m_EditorClassIdentifier: 
   isUsingClips: 0
-  clip: {fileID: 8300000, guid: a6ec9e70e4e884feab1bb31fa9ee4cc6, type: 3}
+  clip: {fileID: 8300000, guid: 8d0d271e700504c2e8a51d6088949a51, type: 3}
   clips: []
-  mixerGroup: {fileID: 24300002, guid: 77447d8fc890c41b38547d833aea79ff, type: 2}
-  volume: 0.5
+  mixerGroup: {fileID: 24300002, guid: e36295798f63a4356910e575834d153f, type: 2}
+  volume: 0.1
   loop: 1
   pitchVariation: 0

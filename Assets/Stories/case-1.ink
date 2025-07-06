@@ -1,9 +1,16 @@
+EXTERNAL complete()
+EXTERNAL shake()
+EXTERNAL play(string id)
+EXTERNAL pause(string id)
+EXTERNAL resume(string id)
+EXTERNAL stop(string id)
+
 VAR cookies = false
 VAR boot = false
 VAR parents = false
 VAR wrong = false
-EXTERNAL complete()
 
+~play("CASE_START")
 Judge: The court is now in session for the trial of Mr.Santa Claus.
 Krampus: The prosecution is ready, Your Honour.
 You: The defense is also ready, Your Honour.
@@ -278,6 +285,7 @@ EVENT:EVIDENCE
     -> END
 
 ===CORRECT===
+~stop("CASE_START")
 You: This report shows all of Santa's health conditions.
 Krampus: And that is relevant to the cookies, how?
 You: Look closely. Santa has been a Type 2 Diabetic for many years!
@@ -285,6 +293,8 @@ You: This health report shows that his condition has been fairly stable, with no
 You: That's only possible if a Type 2 Diabetic doesn't consume sugar for an extended period.
 Krampus: One cookie and a glass of milk won't show up on a health report!
 You: That may be true for an ordinary cookie...
+
+~play("CASE_BREAK")
 You: But this cookie was covered in chocolate chips and butter!
 You: Any diabetic who ate it would show signs immediately.
 You: Santa was not the culprit. Kevin is!
@@ -334,6 +344,6 @@ Judge: ...
 You: I believe I have proved my point.
 Judge: I don't think we have to continue this.
 Judge: The court is adjourned for today.
-Judge: The trial will continue tomorrow from 14:00 sharp
 ~ complete()
+Judge: The trial will continue tomorrow from 14:00 sharp
 -> DONE

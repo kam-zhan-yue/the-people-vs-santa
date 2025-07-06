@@ -85,6 +85,7 @@ public class GameOverPopup : Popup
     {
         FadeOut(foreground).OnComplete(() =>
         {
+            Debug.Log($"Restarting {SceneManager.GetActiveScene().name}");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
     }
