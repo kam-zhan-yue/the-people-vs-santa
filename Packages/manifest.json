@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.kamzhanyue.audio-delivery": "https://github.com/kam-zhan-yue/audio-delivery.git",
+    "com.kamzhanyue.ui-delivery": "https://github.com/kam-zhan-yue/ui-delivery.git",
+    "com.kamzhanyue.utility-delivery": "https://github.com/kam-zhan-yue/utility-delivery.git",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.31",
