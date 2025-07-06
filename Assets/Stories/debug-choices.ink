@@ -21,7 +21,7 @@ You: (Let's learn more about the case...)
 You: (I need to find something that will prove Santa didn't eat those cookies)
 EVENT:EVIDENCE
 + [HEALTH_REPORT]
-    You chose correctly!
+    You: You chose correctly!
     -> END
 + [NAUGHTY_LIST]
     You: This naughty list shows that Kevin ate the cookies, not Santa!

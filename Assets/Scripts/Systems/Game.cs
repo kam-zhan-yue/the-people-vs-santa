@@ -114,6 +114,7 @@ public abstract class Game : MonoBehaviour
         }
         else if (eventId == EVIDENCE)
         {
+            State = GameState.EvidenceSelect;
             actionPopup.ShowEvidenceSelect(true);
         }
         else
@@ -134,7 +135,7 @@ public abstract class Game : MonoBehaviour
         actionPopup.ShowChoices();
     }
 
-    public void Choose(Evidence evidence)
+    public async UniTask Choose(Evidence evidence)
     {
         List<Choice> choices = _inkStory.currentChoices;
         foreach (Choice choice in choices)
@@ -142,6 +143,8 @@ public abstract class Game : MonoBehaviour
             if (choice.text == evidence.name)
             {
                 _inkStory.ChooseChoiceIndex(choice.index);
+                await UniTask.WaitForEndOfFrame();
+                Continue();
                 return;
             }
         }

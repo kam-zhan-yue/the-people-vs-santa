@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
 using TMPro;
@@ -74,9 +75,10 @@ public class EvidenceSelectPopup : Popup
         // Deselect the previous if possible
         if (_selected)
             _selected.UnSelect();
-        
+
         // Set the current selected
         _selected = item;
+        _selected.Select();
         Evidence evidence = _selected.Evidence;
         if (evidence)
         {
@@ -99,6 +101,7 @@ public class EvidenceSelectPopup : Popup
 
     private void PresentButtonClicked()
     {
-        _game.Choose(_selected.Evidence);
+        HidePopup();
+        _game.Choose(_selected.Evidence).Forget();
     }
 }
