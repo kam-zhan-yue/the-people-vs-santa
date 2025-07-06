@@ -294,6 +294,7 @@ You: That's only possible if a Type 2 Diabetic doesn't consume sugar for an exte
 Krampus: One cookie and a glass of milk won't show up on a health report!
 You: That may be true for an ordinary cookie...
 
+~shake()
 ~play("CASE_BREAK")
 You: But this cookie was covered in chocolate chips and butter!
 You: Any diabetic who ate it would show signs immediately.
@@ -331,9 +332,13 @@ Kevin: No presents! No!
 Judge: Enough. We can adjourn this case for another day when the Naughty List is updated.
 You: But if Kevin doesn't confess now, his name won't get removed from the List.
 Krampus: Hey! Objection!
+~shake()
 Kevin: NO!
+~shake()
 Kevin: FINE! I CONFESS!
+~shake()
 Kevin: I ATE THE COOKIES!
+~shake()
 Kevin: I DRANK THE MILK!
 Kevin: It was all because that weird short man told me I won't be on the Naughty List!
 You: A weird short man? Can you identify this person?
