@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Ink.Runtime;
+using Kuroneko.UtilityDelivery;
 using UnityEngine;
 
 public enum GameState
@@ -15,9 +16,12 @@ public abstract class Game : MonoBehaviour
     private const string ACTION_EVIDENCE = "EVIDENCE";
 
     public GameDatabase database;
+    public List<Evidence> startingEvidence = new();
     [SerializeField] private TextAsset inkFile;
     [SerializeField] private DialoguePopup dialoguePopup;
     [SerializeField] private ActionPopup actionPopup;
+
+    private List<Evidence> _currentEvidence = new();
 
     public GameState State { get; private set; } = GameState.Dialogue;
     
@@ -29,6 +33,18 @@ public abstract class Game : MonoBehaviour
     {
         dialoguePopup.Init(this);
         actionPopup.Init(this);
+        foreach (Evidence evidence in startingEvidence)
+            _currentEvidence.Add(evidence);
+    }
+
+    public List<Evidence> GetEvidence()
+    {
+        return _currentEvidence;
+    }
+
+    public List<Choice> GetChoices()
+    {
+        return _inkStory.currentChoices;
     }
 
     protected virtual void Start()
@@ -47,7 +63,7 @@ public abstract class Game : MonoBehaviour
         }
         else if (_inkStory.currentChoices.Count > 0)
         {
-            ProcessChoices(_inkStory.currentChoices);
+            ProcessChoices();
         }
     }
 
@@ -66,6 +82,7 @@ public abstract class Game : MonoBehaviour
         if (lineOne.StartsWith(ACTION_EVIDENCE))
         {
             State = GameState.Evidence;
+            AddEvidence(lineTwo);
             actionPopup.ShowEvidence(lineTwo);
         }
         else
@@ -75,8 +92,34 @@ public abstract class Game : MonoBehaviour
         }
     }
 
-    private void ProcessChoices(List<Choice> choices)
+    private void AddEvidence(string id)
+    {
+        if (database.TryGetEvidence(id, out Evidence evidence))
+            _currentEvidence.AddOnce(evidence);
+    }
+
+    private void ProcessChoices()
     {
         State = GameState.ChoiceSelect;
+        actionPopup.ShowChoices();
+    }
+
+    public void Choose(Evidence evidence)
+    {
+        List<Choice> choices = _inkStory.currentChoices;
+        foreach (Choice choice in choices)
+        {
+            if (choice.text == evidence.name)
+            {
+                _inkStory.ChooseChoiceIndex(choice.index);
+                return;
+            }
+        }
+        Debug.LogError($"Could not choose {evidence.name!}");
+    }
+
+    public void Choose(Choice choice)
+    {
+        _inkStory.ChooseChoiceIndex(choice.index);
     }
 }

@@ -56,7 +56,7 @@ MonoBehaviour:
   resetSequence: {fileID: 0}
   choiceSelectPopup: {fileID: 362346313143951091}
   evidencePopup: {fileID: 7336819821891975566}
-  evidenceSelectPopup: {fileID: 7403016127369727435}
+  evidenceSelectPopup: {fileID: 8038470895982840397}
   testimonyPopup: {fileID: 6538381930255702943}
 --- !u!1 &7511999366504162493
 GameObject:
@@ -87,7 +87,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4464201955467459967}
-  - {fileID: 9188133899427386523}
+  - {fileID: 8552448223038133021}
   - {fileID: 3497647529644805255}
   - {fileID: 5258646697162704354}
   m_Father: {fileID: 7991648197860744433}
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541601974223827538, guid: ddec2ca0f5ba04182accc51c2b1c31d1, type: 3}
       propertyPath: m_Name
-      value: ChoicePopup
+      value: ChoiceSelectPopup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -343,7 +343,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1085822618599246496, guid: ddec2ca0f5ba04182accc51c2b1c31d1, type: 3}
   m_PrefabInstance: {fileID: 3667502319379724255}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4031702003207112634
+--- !u!1001 &4522127348348731452
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -440,10 +440,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc7fc25ba64947a0bbdabe9ce014d31, type: 3}
---- !u!114 &7403016127369727435 stripped
+--- !u!114 &8038470895982840397 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5859095624698841713, guid: fcc7fc25ba64947a0bbdabe9ce014d31, type: 3}
-  m_PrefabInstance: {fileID: 4031702003207112634}
+  m_PrefabInstance: {fileID: 4522127348348731452}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -451,10 +451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad37e1bfc57b44100b3f0e7ad3683630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &9188133899427386523 stripped
+--- !u!224 &8552448223038133021 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5220151929199137569, guid: fcc7fc25ba64947a0bbdabe9ce014d31, type: 3}
-  m_PrefabInstance: {fileID: 4031702003207112634}
+  m_PrefabInstance: {fileID: 4522127348348731452}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8300341949026062064
 PrefabInstance:

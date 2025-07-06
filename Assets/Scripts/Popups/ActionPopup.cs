@@ -15,8 +15,9 @@ public class ActionPopup : Popup
     public void Init(Game game)
     {
         _game = game;
-        choiceSelectPopup.Init(this);
+        choiceSelectPopup.Init(this, _game);
         evidencePopup.Init(this, _game);
+        evidenceSelectPopup.Init(this, _game);
         testimonyPopup.Init(this);
     }
 
