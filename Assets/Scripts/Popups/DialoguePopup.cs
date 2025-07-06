@@ -1,8 +1,8 @@
+using DG.Tweening;
 using Kuroneko.UIDelivery;
+using Kuroneko.UtilityDelivery;
 using TMPro;
 using UnityEngine;
-using DG.Tweening;
-using Kuroneko.UtilityDelivery;
 
 public class DialoguePopup : Popup
 {
@@ -22,6 +22,9 @@ public class DialoguePopup : Popup
 
     private void Update()
     {
+        if (_game.State != GameState.Dialogue)
+            return;
+        
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (_isTyping)

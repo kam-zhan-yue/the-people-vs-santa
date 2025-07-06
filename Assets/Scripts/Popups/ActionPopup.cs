@@ -24,8 +24,8 @@ public class ActionPopup : Popup
     {
         choiceSelectPopup.HidePopup();
         evidencePopup.HidePopup();
+        evidenceSelectPopup.HidePopup();
         testimonyPopup.HidePopup();
-        HidePopup();
     }
 
     public void ShowChoices()
@@ -40,7 +40,7 @@ public class ActionPopup : Popup
         evidencePopup.Show(evidence);
     }
 
-    public void ShowEvidenceSelect(bool interactable)
+    public void ShowEvidenceSelect(bool intractable)
     {
         choiceSelectPopup.HidePopup();
         evidencePopup.ShowPopup();

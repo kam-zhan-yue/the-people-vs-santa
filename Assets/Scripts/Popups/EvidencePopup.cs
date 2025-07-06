@@ -11,7 +11,6 @@ public class EvidencePopup : Popup
     [SerializeField] private TMP_Text description;
     [SerializeField] private Button okayButton;
     
-    
     private ActionPopup _actionPopup;
     private Game _game;
     

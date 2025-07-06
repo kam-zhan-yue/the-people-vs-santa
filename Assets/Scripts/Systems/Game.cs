@@ -2,6 +2,14 @@ using System.Collections.Generic;
 using Ink.Runtime;
 using UnityEngine;
 
+public enum GameState
+{
+    Dialogue,
+    Evidence,
+    ChoiceSelect,
+    EvidenceSelect,
+}
+
 public abstract class Game : MonoBehaviour
 {
     private const string ACTION_EVIDENCE = "EVIDENCE";
@@ -10,6 +18,8 @@ public abstract class Game : MonoBehaviour
     [SerializeField] private TextAsset inkFile;
     [SerializeField] private DialoguePopup dialoguePopup;
     [SerializeField] private ActionPopup actionPopup;
+
+    public GameState State { get; private set; } = GameState.Dialogue;
     
     private Story _inkStory;
 
@@ -50,18 +60,23 @@ public abstract class Game : MonoBehaviour
             dialoguePopup.ShowDialogue(string.Empty, line);
             return;
         }
-        
-        if (splits[0].StartsWith(ACTION_EVIDENCE))
+
+        string lineOne = splits[0].Trim();
+        string lineTwo = splits[1].Trim();
+        if (lineOne.StartsWith(ACTION_EVIDENCE))
         {
-            actionPopup.ShowEvidence(splits[1]);
+            State = GameState.Evidence;
+            actionPopup.ShowEvidence(lineTwo);
         }
         else
         {
-            dialoguePopup.ShowDialogue(splits[0], splits[1]);
+            State = GameState.Dialogue;
+            dialoguePopup.ShowDialogue(lineOne, lineTwo);
         }
     }
 
     private void ProcessChoices(List<Choice> choices)
     {
+        State = GameState.ChoiceSelect;
     }
 }
