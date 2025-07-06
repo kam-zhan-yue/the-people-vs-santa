@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Kevin
   m_EditorClassIdentifier: 
   displayName: Kevin
-  expressions: []
+  talkId: KEVIN
   background: {fileID: 0}
   main: {fileID: 0}
   foreground: {fileID: 0}
+  expressions: []

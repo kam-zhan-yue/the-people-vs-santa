@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Santa
   m_EditorClassIdentifier: 
   displayName: Santa
-  expressions: []
+  talkId: SANTA
   background: {fileID: 4251691210187179288, guid: b1227d9380b694748bab27e6c4234963, type: 3}
   main: {fileID: 0}
   foreground: {fileID: 0}
+  expressions: []

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: You
   m_EditorClassIdentifier: 
   displayName: You
-  expressions: []
+  talkId: YOU
   background: {fileID: 0}
   main: {fileID: 0}
   foreground: {fileID: 0}
+  expressions: []

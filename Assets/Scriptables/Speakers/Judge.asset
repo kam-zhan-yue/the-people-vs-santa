@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Judge
   m_EditorClassIdentifier: 
   displayName: Judge
-  expressions: []
+  talkId: JUDGE
   background: {fileID: 0}
   main: {fileID: 0}
   foreground: {fileID: 0}
+  expressions: []

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Rose
   m_EditorClassIdentifier: 
   displayName: Rose
-  expressions: []
+  talkId: ROSE
   background: {fileID: 0}
   main: {fileID: 0}
   foreground: {fileID: 0}
+  expressions: []

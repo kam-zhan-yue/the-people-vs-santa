@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Kuroneko.AudioDelivery;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Speaker : ScriptableObject
 {
     public string displayName;
 
+    public string talkId;
     public Sprite background;
     public Sprite main;
     public Sprite foreground;

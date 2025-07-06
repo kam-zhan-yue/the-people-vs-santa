@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Kuroneko.AudioDelivery;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
 using TMPro;
@@ -12,6 +13,7 @@ public class DialoguePopup : Popup
     private Game _game;
     private Tween _typeTween;
     private bool _isTyping = false;
+    private string _talkId = string.Empty;
 
     private const float TYPE_SPEED = 0.02f;
 
@@ -32,6 +34,7 @@ public class DialoguePopup : Popup
                 _typeTween.Kill();
                 dialogueText.maxVisibleCharacters = dialogueText.textInfo.characterCount;
                 _isTyping = false;
+                StopAudio();
             }
             else
             {
@@ -50,6 +53,7 @@ public class DialoguePopup : Popup
     {
         SetSpeaker(speaker);
         PlayDialogue(line);
+        PlayAudio(speaker);
     }
 
     private void SetSpeaker(string speaker)
@@ -80,6 +84,25 @@ public class DialoguePopup : Popup
         .OnComplete(() =>
         {
             _isTyping = false;
+            StopAudio();
         });
+    }
+
+    private void PlayAudio(string speakerId)
+    {
+        if (_game.database.TryGetSpeaker(speakerId, out Speaker speaker))
+        {
+            _talkId = speaker.talkId;
+            ServiceLocator.Instance.Get<IAudioService>().Play(_talkId);
+        }
+    }
+
+    private void StopAudio()
+    {
+        if (!string.IsNullOrEmpty(_talkId))
+        {
+            ServiceLocator.Instance.Get<IAudioService>().Stop(_talkId);
+            _talkId = string.Empty;
+        }
     }
 }

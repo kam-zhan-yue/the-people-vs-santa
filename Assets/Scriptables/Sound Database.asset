@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b798e7ab8fef94885bf64f46d2f12a67, type: 3}
+  m_Name: Sound Database
+  m_EditorClassIdentifier: 
+  sounds:
+  - id: ROSE
+    config: {fileID: 11400000, guid: 80555abaca145452db1f58a23f951bca, type: 2}
+  - id: YOU
+    config: {fileID: 11400000, guid: 3d8286189847344d3bc1e172e6bbd61f, type: 2}
+  - id: SANTA
+    config: {fileID: 11400000, guid: 68eedd30476ce4aa5a1a93e276c50da9, type: 2}
+  - id: KRAMPUS
+    config: {fileID: 11400000, guid: f539cd645233f4e15b21505451c8544b, type: 2}
+  - id: KEVIN
+    config: {fileID: 11400000, guid: 65087050210a344f18a0c5366985a68c, type: 2}
+  - id: BUDDY
+    config: {fileID: 11400000, guid: 259ef0e6d0c9b4ad2bbc3d83c691f967, type: 2}
+  - id: JUDGE
+    config: {fileID: 11400000, guid: 09f26d9fcb4914ff3b647ef31ebcdc2b, type: 2}
+  - id: CLICK
+    config: {fileID: 0}
