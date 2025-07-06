@@ -27,6 +27,8 @@ public abstract class Game : MonoBehaviour
 
     private List<Evidence> _currentEvidence = new();
 
+    public string TestimonyID { get; private set; }
+
     public GameState State { get; private set; } = GameState.Dialogue;
     
     private Story _inkStory;
@@ -102,17 +104,25 @@ public abstract class Game : MonoBehaviour
 
     private void ProcessEvent(string eventId)
     {
-        if (eventId == TESTIFY)
+        if (eventId.StartsWith(TESTIFY))
+        {
+            string[] splits = eventId.Split(':', 2);
+            if (splits.Length < 2)
+            {
+                Debug.LogError($"Could not process TESTIFY at {eventId}");
+                _inkStory.Continue();
+            }
+            else
+            {
+                TestimonyID = splits[1];
+            }
+        }
+        else if (eventId.StartsWith(CROSS_EXAMINATION))
         {
             // TODO: Make a flashy title here
             _inkStory.Continue();
         }
-        else if (eventId == CROSS_EXAMINATION)
-        {
-            // TODO: Make a flashy title here
-            _inkStory.Continue();
-        }
-        else if (eventId == EVIDENCE)
+        else if (eventId.StartsWith(EVIDENCE))
         {
             State = GameState.EvidenceSelect;
             actionPopup.ShowEvidenceSelect(true);

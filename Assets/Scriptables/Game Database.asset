@@ -18,3 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 29dc4028596f94cc59d688216a3b4ebd, type: 2}
   - {fileID: 11400000, guid: 73628c7be205c4fba9c17ee3e5b6c73b, type: 2}
   - {fileID: 11400000, guid: cbca2e840b77343a996dc589904c659a, type: 2}
+  testimonyList:
+  - {fileID: 11400000, guid: 77468ffe62cb24b6998e841375118787, type: 2}

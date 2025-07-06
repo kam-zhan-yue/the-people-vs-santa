@@ -16,7 +16,7 @@ public class ActionPopup : Popup
         choiceSelectPopup.Init(this, _game);
         evidencePopup.Init(this, _game);
         evidenceSelectPopup.Init(this, _game);
-        testimonyPopup.Init(this);
+        testimonyPopup.Init(this, _game);
     }
 
     protected override void InitPopup()

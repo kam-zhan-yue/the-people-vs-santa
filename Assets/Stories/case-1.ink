@@ -30,7 +30,7 @@ Krampus: Now, Kevin, you had evidence to prove that this was indeed the working 
 Kevin: I do! I do!
 Judge: I see. Mr.McCallister, please testify to the court about this evidence.
 
-EVENT:TESTIFY #kevin
+EVENT:TESTIFY:KEVIN
 
 Kevin: Ok sir!
 Kevin: It all started when I was in bed and I heard something downstairs.
@@ -213,8 +213,8 @@ Judge: What is your reasoning?
 }
 
 ===EVIDENCE===
-EVENT:EVIDENCE
 You: (I need to find something that will prove Santa didn't eat those cookies)
+EVENT:EVIDENCE
 + [HEALTH_REPORT]
     -> CORRECT
 + [NAUGHTY_LIST]

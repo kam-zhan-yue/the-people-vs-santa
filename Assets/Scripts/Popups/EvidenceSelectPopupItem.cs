@@ -27,7 +27,10 @@ public class EvidenceSelectPopupItem : PopupItem
 
     public void OnClick()
     {
-        _popup.Select(this);
+        if (Evidence)
+        {
+            _popup.Select(this);
+        }
     }
 
     public void SetEmpty()
