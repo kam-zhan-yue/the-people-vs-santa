@@ -156,7 +156,7 @@ MonoBehaviour:
   showSequence: {fileID: 0}
   hideSequence: {fileID: 0}
   resetSequence: {fileID: 0}
-  samplePopupItem: {fileID: 0}
+  samplePopupItem: {fileID: 7434537187228792485}
   choiceHolder: {fileID: 5549280980033259230}
   testimonyButton: {fileID: 2896537477648514542}
   evidenceButton: {fileID: 6254482022538166384}
@@ -481,6 +481,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5073496873073898618, guid: 18fe9b3ed3b5048a8bcdd93d78abfd71, type: 3}
   m_PrefabInstance: {fileID: 7082857566136604932}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7434537187228792485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 389443997492752289, guid: 18fe9b3ed3b5048a8bcdd93d78abfd71, type: 3}
+  m_PrefabInstance: {fileID: 7082857566136604932}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972795b9eb2b94185aa90a4cea9772f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9031062722757700521
 PrefabInstance:
   m_ObjectHideFlags: 0

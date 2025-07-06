@@ -34,6 +34,7 @@ public class ActionPopup : Popup
         choiceSelectPopup.ShowPopup();
         evidencePopup.HidePopup();
         testimonyPopup.HidePopup();
+        evidenceSelectPopup.HidePopup();
     }
 
     public void ShowEvidence(string evidence)
@@ -41,17 +42,19 @@ public class ActionPopup : Popup
         evidencePopup.Show(evidence);
     }
 
-    public void ShowEvidenceSelect(bool intractable)
+    public void ShowEvidenceSelect(bool interactable)
     {
+        evidenceSelectPopup.Show(interactable);
         choiceSelectPopup.HidePopup();
-        evidencePopup.ShowPopup();
+        evidencePopup.HidePopup();
         testimonyPopup.HidePopup();
     }
 
     public void ShowTestimony()
     {
+        testimonyPopup.ShowPopup();
         choiceSelectPopup.HidePopup();
         evidencePopup.HidePopup();
-        testimonyPopup.ShowPopup();
+        evidenceSelectPopup.HidePopup();
     }
 }

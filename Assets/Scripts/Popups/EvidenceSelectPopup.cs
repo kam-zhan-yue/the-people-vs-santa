@@ -34,6 +34,7 @@ public class EvidenceSelectPopup : Popup
 
     public void Show(bool interactable = false)
     {
+        ShowPopup();
         _interactable = interactable;
         backButton.gameObject.SetActiveFast(!_interactable);
         ShowItems();

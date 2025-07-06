@@ -221,22 +221,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!224 &337323829 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7991648197860744433, guid: 05d271aef9cb44b3a95acbf370422e09, type: 3}
-  m_PrefabInstance: {fileID: 430871255340774625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &337323830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3866066313909950329, guid: 05d271aef9cb44b3a95acbf370422e09, type: 3}
-  m_PrefabInstance: {fileID: 430871255340774625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a16d5eac0ab2e49de80a3490dd99e87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +553,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1164106929}
-  - {fileID: 337323829}
+  - {fileID: 1457208039}
   m_Father: {fileID: 174226659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -628,9 +612,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: b7933b6de62754bc9acf79b538e31dd4, type: 2}
-  inkFile: {fileID: 4900000, guid: 46f3f531be5c54457b032498f7ac61d2, type: 3}
+  startingEvidence: []
+  inkFile: {fileID: 4900000, guid: cd9af3d496bc2446c9fb50f8b307bc09, type: 3}
   dialoguePopup: {fileID: 1164106930}
-  actionPopup: {fileID: 337323830}
+  actionPopup: {fileID: 1457208040}
 --- !u!224 &1164106929 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3412179482699279481, guid: 040cd3dd0b81341e497027c81c23dcb8, type: 3}
@@ -647,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc66669405d54284bf51c061ba36b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &430871255340774625
+--- !u!1001 &1457208038
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -764,6 +749,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d271aef9cb44b3a95acbf370422e09, type: 3}
+--- !u!224 &1457208039 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7991648197860744433, guid: 05d271aef9cb44b3a95acbf370422e09, type: 3}
+  m_PrefabInstance: {fileID: 1457208038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1457208040 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3866066313909950329, guid: 05d271aef9cb44b3a95acbf370422e09, type: 3}
+  m_PrefabInstance: {fileID: 1457208038}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16d5eac0ab2e49de80a3490dd99e87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2700870910028538122
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class ChoiceSelectPopup : Popup
     protected override void InitPopup()
     {
         testimonyButton.onClick.AddListener(TestimonyButtonClicked);
-        testimonyButton.onClick.AddListener(EvidenceButtonClicked);
+        evidenceButton.onClick.AddListener(EvidenceButtonClicked);
     }
 
     public override void ShowPopup()
@@ -73,6 +73,7 @@ public class ChoiceSelectPopup : Popup
 
     public void Select(ChoiceSelectPopupItem item)
     {
+        HidePopup();
         _game.Choose(item.Choice);
     }
 

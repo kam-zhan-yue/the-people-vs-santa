@@ -13,7 +13,10 @@ public enum GameState
 
 public abstract class Game : MonoBehaviour
 {
-    private const string ACTION_EVIDENCE = "EVIDENCE";
+    private const string EVIDENCE = "EVIDENCE";
+    private const string EVENT = "EVENT";
+    private const string TESTIFY = "TESTIFY";
+    private const string CROSS_EXAMINATION = "CROSS_EXAMINATION";
 
     public GameDatabase database;
     public List<Evidence> startingEvidence = new();
@@ -79,16 +82,42 @@ public abstract class Game : MonoBehaviour
 
         string lineOne = splits[0].Trim();
         string lineTwo = splits[1].Trim();
-        if (lineOne.StartsWith(ACTION_EVIDENCE))
+        if (lineOne.StartsWith(EVIDENCE))
         {
             State = GameState.Evidence;
             AddEvidence(lineTwo);
             actionPopup.ShowEvidence(lineTwo);
         }
+        else if (lineOne.StartsWith(EVENT))
+        {
+            ProcessEvent(lineTwo);
+        }
         else
         {
             State = GameState.Dialogue;
             dialoguePopup.ShowDialogue(lineOne, lineTwo);
+        }
+    }
+
+    private void ProcessEvent(string eventId)
+    {
+        if (eventId == TESTIFY)
+        {
+            // TODO: Make a flashy title here
+            _inkStory.Continue();
+        }
+        else if (eventId == CROSS_EXAMINATION)
+        {
+            // TODO: Make a flashy title here
+            _inkStory.Continue();
+        }
+        else if (eventId == EVIDENCE)
+        {
+            actionPopup.ShowEvidenceSelect(true);
+        }
+        else
+        {
+            Debug.LogError($"Error processing event {eventId}");
         }
     }
 
@@ -121,5 +150,6 @@ public abstract class Game : MonoBehaviour
     public void Choose(Choice choice)
     {
         _inkStory.ChooseChoiceIndex(choice.index);
+        Continue();
     }
 }
