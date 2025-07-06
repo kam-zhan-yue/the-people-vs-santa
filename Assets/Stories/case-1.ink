@@ -2,6 +2,7 @@ VAR cookies = false
 VAR boot = false
 VAR parents = false
 VAR wrong = false
+EXTERNAL complete()
 
 Judge: The court is now in session for the trial of Mr.Santa Claus.
 Krampus: The prosecution is ready, Your Honour.
@@ -334,4 +335,5 @@ You: I believe I have proved my point.
 Judge: I don't think we have to continue this.
 Judge: The court is adjourned for today.
 Judge: The trial will continue tomorrow from 14:00 sharp
+~ complete()
 -> DONE

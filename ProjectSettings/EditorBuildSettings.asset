@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prologue.unity
     guid: 3b64e26252b854066823aab003707447
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: bab26a99dd7f5415180acbdc688a6ef6
+  - enabled: 1
+    path: Assets/Scenes/Case One.unity
+    guid: 3f18de2a741a54771a34cbfb613b3351
+  - enabled: 1
+    path: Assets/Scenes/Event.unity
+    guid: e5d62a3c9a76d4affbfaba7517b9b89d
+  - enabled: 1
+    path: Assets/Scenes/Case Two.unity
+    guid: 89a31673f67074aa982e5be368c3459f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

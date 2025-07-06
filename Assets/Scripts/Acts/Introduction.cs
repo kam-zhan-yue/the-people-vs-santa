@@ -4,6 +4,6 @@ public class Introduction : Game
 {
     protected override void Enter()
     {
-        PlayerPrefs.SetInt("Santa", 1);
+        PlayerPrefs.SetInt("Introduction", 1);
     }
 }

@@ -1,3 +1,4 @@
+EXTERNAL complete()
 You: Thank you for meeting me on such short notice, Santa. I know it's a long way away from the North Pole.
 Santa: Ho, ho, ho! Nothing is ever too far for Rudolph and I.
 Santa: Thank you for helping me with this.
@@ -87,3 +88,5 @@ Santa: Ho, ho, ho! Anytime.
 You: With what you've told me, each of these witnesses could be lying and it is up to me to present the evidence and find contradictions in their testimonies.
 Santa: Thank you.
 Santa: The future of Christmas is counting on you, young man.
+~ complete()
+-> END

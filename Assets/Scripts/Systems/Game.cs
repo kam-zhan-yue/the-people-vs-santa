@@ -22,11 +22,12 @@ public abstract class Game : MonoBehaviour
     public GameDatabase database;
     public List<Evidence> startingEvidence = new();
     [SerializeField] private TextAsset inkFile;
-    [SerializeField] private SpeakerPopup speakerPopup;
-    [SerializeField] private DialoguePopup dialoguePopup;
-    [SerializeField] private ActionPopup actionPopup;
+    [SerializeField] private Popups popups;
+    [SerializeField] private string nextScene;
 
     private List<Evidence> _currentEvidence = new();
+    public bool Completed { get; private set; } = false;
+    public string NextScene => nextScene;
 
     public string TestimonyID { get; private set; }
 
@@ -38,9 +39,7 @@ public abstract class Game : MonoBehaviour
 
     protected virtual void Awake()
     {
-        speakerPopup.Init(this);
-        dialoguePopup.Init(this);
-        actionPopup.Init(this);
+        popups.Init(this);
         foreach (Evidence evidence in startingEvidence)
             _currentEvidence.Add(evidence);
     }
@@ -62,9 +61,15 @@ public abstract class Game : MonoBehaviour
 
     protected virtual void Start()
     {
+        Init();
+        Continue();
+    }
+
+    private void Init()
+    {
         Enter();
         _inkStory = new Story(inkFile.text);
-        Continue();
+        _inkStory.BindExternalFunction("complete", SetCompleted);
     }
 
     public void Continue()
@@ -78,6 +83,10 @@ public abstract class Game : MonoBehaviour
         {
             ProcessChoices();
         }
+        else
+        {
+            popups.CheckEndGame();
+        }
     }
 
     private void ProcessLine(string line)
@@ -86,7 +95,7 @@ public abstract class Game : MonoBehaviour
         if (splits.Length < 2)
         {
             Debug.LogError($"Could not process {line}");
-            dialoguePopup.ShowDialogue(string.Empty, line);
+            popups.DialoguePopup.ShowDialogue(string.Empty, line);
             return;
         }
 
@@ -96,7 +105,7 @@ public abstract class Game : MonoBehaviour
         {
             State = GameState.Evidence;
             AddEvidence(lineTwo);
-            actionPopup.ShowEvidence(lineTwo);
+            popups.ActionPopup.ShowEvidence(lineTwo);
         }
         else if (lineOne.StartsWith(EVENT))
         {
@@ -105,8 +114,8 @@ public abstract class Game : MonoBehaviour
         else
         {
             State = GameState.Dialogue;
-            speakerPopup.Show(lineOne);
-            dialoguePopup.ShowDialogue(lineOne, lineTwo);
+            popups.SpeakerPopup.Show(lineOne);
+            popups.DialoguePopup.ShowDialogue(lineOne, lineTwo);
         }
     }
 
@@ -133,7 +142,7 @@ public abstract class Game : MonoBehaviour
         else if (eventId.StartsWith(EVIDENCE))
         {
             State = GameState.EvidenceSelect;
-            actionPopup.ShowEvidenceSelect(true);
+            popups.ActionPopup.ShowEvidenceSelect(true);
         }
         else
         {
@@ -150,7 +159,7 @@ public abstract class Game : MonoBehaviour
     private void ProcessChoices()
     {
         State = GameState.ChoiceSelect;
-        actionPopup.ShowChoices();
+        popups.ActionPopup.ShowChoices();
     }
 
     public async UniTask Choose(Evidence evidence)
@@ -180,5 +189,10 @@ public abstract class Game : MonoBehaviour
          */
         await UniTask.WaitForEndOfFrame();
         Continue();
+    }
+
+    private void SetCompleted()
+    {
+        Completed = true;
     }
 }
