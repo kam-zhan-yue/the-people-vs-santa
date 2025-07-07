@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02c07f42d6e9b4dbe999699542ad8eeb
+guid: 7d14f0e3f55654066b872afe5796a41c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: defense
+  - name: witness-background
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 128
       height: 96
-    spriteID: c7e1a84324e4c4fca867061b17b3bdf0
+    spriteID: a7a23346072f846c1995aa7d8a3c7d04
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,13 +147,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -924929894
-    name: defense
+    guid: -285676448
+    name: witness-background
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: defense
+    - name: witness-background
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -161,7 +161,7 @@ ScriptedImporter:
         y: 0
         width: 128
         height: 96
-      spriteId: c7e1a84324e4c4fca867061b17b3bdf0
+      spriteId: a7a23346072f846c1995aa7d8a3c7d04
     linkedCells: []
     parentIndex: -1
   platformSettings:

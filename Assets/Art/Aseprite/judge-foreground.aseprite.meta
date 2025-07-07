@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02c07f42d6e9b4dbe999699542ad8eeb
+guid: 2f8a9edc4579145b290e3d58113891e5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: defense
+  - name: judge-foreground
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 128
       height: 96
-    spriteID: c7e1a84324e4c4fca867061b17b3bdf0
+    spriteID: 8a393552995434d10a47e9d59a04f00a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,13 +147,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -924929894
-    name: defense
+    guid: -816723045
+    name: judge-foreground
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: defense
+    - name: judge-foreground
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -161,7 +161,7 @@ ScriptedImporter:
         y: 0
         width: 128
         height: 96
-      spriteId: c7e1a84324e4c4fca867061b17b3bdf0
+      spriteId: 8a393552995434d10a47e9d59a04f00a
     linkedCells: []
     parentIndex: -1
   platformSettings:

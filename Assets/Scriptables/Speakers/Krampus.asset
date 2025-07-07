@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Krampus
   talkId: KRAMPUS
-  background: {fileID: 0}
+  background: {fileID: -6359319040626184142, guid: c0f2717a09e764c4f8dcaaae15214179, type: 3}
   main: {fileID: 0}
-  foreground: {fileID: 0}
+  foreground: {fileID: -8845296237834502249, guid: fd7a6da02c4e9416ca64ad136601911a, type: 3}
   expressions: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02c07f42d6e9b4dbe999699542ad8eeb
+guid: 683d0649e55684a64b93aecec49400a9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: defense
+  - name: judge
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 128
       height: 96
-    spriteID: c7e1a84324e4c4fca867061b17b3bdf0
+    spriteID: 324156b37981a401a9d73caf455cf80f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,13 +147,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -924929894
-    name: defense
+    guid: -1604265599
+    name: judge
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: defense
+    - name: judge
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -161,7 +161,7 @@ ScriptedImporter:
         y: 0
         width: 128
         height: 96
-      spriteId: c7e1a84324e4c4fca867061b17b3bdf0
+      spriteId: 324156b37981a401a9d73caf455cf80f
     linkedCells: []
     parentIndex: -1
   platformSettings:

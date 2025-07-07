@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Judge
   talkId: JUDGE
-  background: {fileID: 0}
+  background: {fileID: 2677249755793822834, guid: 9e0669f7959974355b819382e28b8078, type: 3}
   main: {fileID: 0}
-  foreground: {fileID: 0}
+  foreground: {fileID: 2228094339679732245, guid: 2f8a9edc4579145b290e3d58113891e5, type: 3}
   expressions: []

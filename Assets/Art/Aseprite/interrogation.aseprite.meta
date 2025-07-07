@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02c07f42d6e9b4dbe999699542ad8eeb
+guid: d219e3ffd8eef4912a95ee7121969e71
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: defense
+  - name: interrogation
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 128
       height: 96
-    spriteID: c7e1a84324e4c4fca867061b17b3bdf0
+    spriteID: 6d4ccb604e8224a09b7d39edcb5bb9e5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,13 +147,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -924929894
-    name: defense
+    guid: 293075907
+    name: interrogation
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: defense
+    - name: interrogation
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -161,7 +161,7 @@ ScriptedImporter:
         y: 0
         width: 128
         height: 96
-      spriteId: c7e1a84324e4c4fca867061b17b3bdf0
+      spriteId: 6d4ccb604e8224a09b7d39edcb5bb9e5
     linkedCells: []
     parentIndex: -1
   platformSettings:
