@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 660535f6756754a8c9daf108c895e8a0, type: 3}
-  m_Name: REINDEER_SCHEDULE
+  m_Name: FOOTPRINTS
   m_EditorClassIdentifier: 
-  displayName: Reindeer Schedule
-  image: {fileID: -4582907416824414950, guid: 21fbe31c65f904b98bea599a6571b2d3, type: 3}
-  description: A minute-by-minute schedule of how to take care of each of Santa's
-    nine reindeers.
+  displayName: Footprints
+  image: {fileID: -8636377612741205784, guid: 8a8de5a2315404409877d2579ee83a5b, type: 3}
+  description: Footprints taken from Kevin's household. They match Santa's foot size
+    and boot model.

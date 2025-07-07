@@ -206,16 +206,14 @@ You: (They don't match the description...)
 ===DAD===
 Kevin: Oh he wears boots for work!
 You: Boots... for work? What kind of work does he do?
-Krampus: Objection, irrelevant.
-Judge: I actually think this is highly relevant. Kevin, continue.
 Kevin: Uhhh, he works as a construction worker sometimes. #whistle
 You: Sometimes? Does he work part time?
 Kevin: I dunno. He says he gets odd jobs here and there.
 You: What kind of other jobs does he do?
 Krampus: Objection, if the father was relevant, he would be testifying.
-Judge: And why isn't he here today?
-Krampus: Ugh...
-Judge: This is relevant, please continue.
+You: And why isn't he here today?
+Krampus: ...
+Judge: Please continue.
 Kevin: He worked at a mall one time! He was popular with the kids.
 -> BOOT_PUSH
 
@@ -294,9 +292,9 @@ EVENT:EVIDENCE
     You: (Uh oh. That may have been the wrong choice.)
     Judge: The case is closed It's clear the defendant committed the crimes.
     -> END
-+ [REINDEER_SCHEDULE]
-    You: The reindeers have a strict schedule of cleaning and feeding!
-    Krampus: Are you saying they ate the cookies?
++ [REINDEER_FOOD]
+    You: Feast your eyes on... this feast!
+    Krampus: Are you serious? Do we look like animals to you?
     You: Uh...
     Krampus: Where's the connection, dimwit?
     Judge: I can't see it either...
@@ -311,6 +309,13 @@ EVENT:EVIDENCE
     Krampus: These photos are not dated. It's impossible to know that.
     Judge: Hmmm, I don't see the connection.
     You: (I fumbled that...)
+    Judge: The case is closed!
+    -> END
++[FOOTPRINTS]
+    You: The footprints!
+    Krampus: We've seen this before.
+    Judge: What is happening here? I've got deja vu.
+    You: (Whoops.)
     Judge: The case is closed!
     -> END
 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NOTEBOOK
   m_EditorClassIdentifier: 
   displayName: Santa's Personal Notebook
-  image: {fileID: -4582907416824414950, guid: 21fbe31c65f904b98bea599a6571b2d3, type: 3}
-  description: Unusually close photos of Santa and Mrs.Claus. They were attached
-    to letters of threats.
+  image: {fileID: -970841492828578619, guid: 3932f152246674362832a3d11b6ec407, type: 3}
+  description: A detailed notebook of Santa's Christmas route. There are algorithsm
+    here that you have never seen before.

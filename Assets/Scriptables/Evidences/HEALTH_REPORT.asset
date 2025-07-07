@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HEALTH_REPORT
   m_EditorClassIdentifier: 
   displayName: Santa's Health Report
-  image: {fileID: -4582907416824414950, guid: 21fbe31c65f904b98bea599a6571b2d3, type: 3}
-  description: A report of Santa detailing his Type 2 Diabetes. He's pretty spry
-    for someone thousands of years old!
+  image: {fileID: -311172895769282312, guid: 455a7ee42ec024390ad312fc97ee2315, type: 3}
+  description: Santa's glistening health report. He's pretty spry for a thousand-year
+    old diabetic!

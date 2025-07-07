@@ -71,10 +71,15 @@ You: Anyways, let's talk about your reindeer.
 You: You're being charged on several counts of animal cruelty, including immoral labour and forced captivity.
 Santa: Nonsense! My reindeer have been part of my family since the beginning!
 Santa: I raised them from calves and have the elves take care of them every day!
+Santa: I have a box 
 You: I guess these charges are more like accusations. I don't see us losing unless they have hard proof of mistreatment.
 You: Do you have a copy of your reindeer caretaking schedule?
 Santa: Of course. I'd be nothing without my reindeer.
-EVIDENCE:REINDEER_SCHEDULE
+Santa: I always keep a pack of their food with me!
+Santa: Almost knicked my bottoms many times because of that! #laugh
+Santa: Would you like some? I've got plenty!
+You: Um... sure...?
+EVIDENCE:REINDEER_FOOD
 
 You: Thanks. Let's move onto your elves.
 Santa: Why, my boy. They're not MY elves!
