@@ -93,9 +93,9 @@ MonoBehaviour:
   showSequence: {fileID: 0}
   hideSequence: {fileID: 0}
   resetSequence: {fileID: 0}
-  SHAKE_DURATION: 0.5
-  SHAKE_STRENGTH: 10
-  SHAKE_VIBRATO: 20
+  shakeDuration: 0.2
+  shakeStrength: 5
+  shakeVibrato: 20
   speakerPopup: {fileID: 1682675023332965505}
   dialoguePopup: {fileID: 4208614717940121967}
   actionPopup: {fileID: 2128440612006017883}
