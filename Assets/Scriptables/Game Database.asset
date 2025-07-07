@@ -29,5 +29,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bdf9ceb332504f1e8e7f8aed0bd298e, type: 2}
   - {fileID: 11400000, guid: 964a9ed92be0b4f9b9b6d6d9b60a1568, type: 2}
   - {fileID: 11400000, guid: 5a2669fd174fc4eeba89964d6c054ec0, type: 2}
+  - {fileID: 11400000, guid: 4144ac85281494e509a630464763adb2, type: 2}
   testimonyList:
   - {fileID: 11400000, guid: 77468ffe62cb24b6998e841375118787, type: 2}

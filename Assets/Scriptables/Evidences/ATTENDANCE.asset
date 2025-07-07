@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660535f6756754a8c9daf108c895e8a0, type: 3}
   m_Name: ATTENDANCE
   m_EditorClassIdentifier: 
-  displayName: Footprints
+  displayName: Santa's Morning Attendance
   image: {fileID: 5972559794067703287, guid: bc0261146a5d243429a368758481e591, type: 3}
   description: Santa's morning attendance, taken at 9:40. One particular elf was
     not present.
