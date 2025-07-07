@@ -13,7 +13,7 @@ VAR wrong = false
 ~play("CASE_START")
 Judge: The court is now in session for the trial of Mr.Santa Claus.
 Krampus: The prosecution is ready... Your Honour.
-You: (Krampus... He's infamous for his meanness...)
+You: (Krampus. He's infamous for his... let's say crude nature.)
 You: (I've got to remain calm.)
 You: The defense is also ready, Your Honour. #confident
 Judge: Mr.Krampus, please give the court your opening statement.
@@ -373,14 +373,21 @@ Kevin: FINE! I CONFESS! #cry
 Kevin: I ATE THE COOKIES! #cry
 ~shake()
 Kevin: I DRANK THE MILK! #cry
-Kevin: It was all because that weird short man told me I won't be on the Naughty List! #cry
-You: A weird short man? Can you identify this person?
-Kevin: I don't know!
-Kevin: Anything but being on the Naughty List! I want my present!
-Krampus: ...
-Judge: ...
-You: I believe I have proved my point.
-Judge: I don't think we have to continue this.
+Kevin: But it's not my fault! Don't you guys know about the rumour?
+You: What rumour are you talking about?
+Kevin: The rumour! It goes like...
+Kevin: "If you don’t eat Santa’s treats tonight"
+Kevin: "He’ll think you’ve been naughty, but that's not quite right"
+Kevin: "So munch those cookies to keep his delight!"
+Krampus: That doesn't sound like a real song.
+Kevin: It is too! Every kid knows it!
+Kevin: It almost won a
+You: (Hm? Where have I heard that before?)
+Kevin: I'd do anything but being on the Naughty List! I want my present!
+Krampus: You silly little boy.
+Krampus: You've cost us this case!
+Judge: I've seen enough!
+Judge: I don't think we have to continue this testimony.
 Judge: The court is adjourned for today!
 ~ complete()
 Judge: The trial will continue tomorrow from 14:00 sharp

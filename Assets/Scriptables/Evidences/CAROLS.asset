@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 660535f6756754a8c9daf108c895e8a0, type: 3}
-  m_Name: FOOTPRINTS
+  m_Name: CAROLS
   m_EditorClassIdentifier: 
-  displayName: Footprints
-  image: {fileID: -8636377612741205784, guid: 8a8de5a2315404409877d2579ee83a5b, type: 3}
-  description: Dirt footprints taken from Kevin's household. They match Santa's foot
-    size and boot model.
+  displayName: Christmas Carols
+  image: {fileID: -1241646721285959871, guid: 5e2b4893f98cf4f7aa02f3a94ba391cd, type: 3}
+  description: The official Christmas Carols distributed worldwide. Composed by the
+    elves each year.

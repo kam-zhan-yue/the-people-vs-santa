@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8:13
+  m_text: 08:13
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ce5d3a3e85604980abd536b81ef6661, type: 2}
   m_sharedMaterial: {fileID: -2310272597500751869, guid: 9ce5d3a3e85604980abd536b81ef6661, type: 2}
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '8:50
+  m_text: '09:40
 
 '
   m_isRightToLeft: 0

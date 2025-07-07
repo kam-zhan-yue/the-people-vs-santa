@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Ink.Runtime;
 using Kuroneko.AudioDelivery;
@@ -20,6 +21,7 @@ public abstract class Game : MonoBehaviour
     private const string EVENT = "EVENT";
     private const string TESTIFY = "TESTIFY";
     private const string CROSS_EXAMINATION = "CROSS_EXAMINATION";
+    private const string OTHER = "OTHER";
 
     public GameDatabase database;
     public List<Evidence> startingEvidence = new();
@@ -194,6 +196,16 @@ public abstract class Game : MonoBehaviour
                 return;
             }
         }
+
+        // If we could not choose, then try to choose "OTHER"
+        Choice other = choices.FirstOrDefault(choice => choice.text == OTHER);
+        if (other != null)
+        {
+            _inkStory.ChooseChoiceIndex(other.index);
+            await UniTask.WaitForEndOfFrame();
+            Continue();
+        }
+        
         Debug.LogError($"Could not choose {evidence.name!}");
     }
 

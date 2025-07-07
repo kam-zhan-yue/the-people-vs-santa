@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Reindeer Food
   image: {fileID: -3964949686706711472, guid: 9d32f041a546348a48df6d77aab8037b, type: 3}
-  description: Food given to Santa's reindeers. Supposedly tastes out of this world.
+  description: Food given to Santa's reindeers. It smells super good for some reason?

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 660535f6756754a8c9daf108c895e8a0, type: 3}
-  m_Name: FOOTPRINTS
+  m_Name: COOKIES
   m_EditorClassIdentifier: 
-  displayName: Footprints
-  image: {fileID: -8636377612741205784, guid: 8a8de5a2315404409877d2579ee83a5b, type: 3}
-  description: Dirt footprints taken from Kevin's household. They match Santa's foot
-    size and boot model.
+  displayName: Double Butter Triple Chocolate Chip Cookies
+  image: {fileID: 2884869952393753993, guid: 4952ccb319ef34141b809615032af1c5, type: 3}
+  description: Double the butter, triple the chocolate! Wildly lacking in nutrition,
+    but chock-full of flavour!

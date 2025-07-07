@@ -15,8 +15,9 @@ You: Well, Santa. I'll be straight. It's not looking good.
 You: You're facing several criminal charges on multiple counts.
 You: On top of that, they have three witnesses that are willing to testify for all of these charges.
 You: Even one of your elf workers, Buddy, is appearing at the trial.
-Santa: Oh dear. Buddy has been Mrs.Claus and I's personal assistant for many yeras. I don't know why he would do this...
-You: Well, like any trial. We have to prepare.
+Santa: Buddy?! He's my head elf! Why would he do something like this...
+Santa: He's been with Mrs.Claus and I for years. I don't understand why he would do this...
+You: Well, like. We have to prepare.
 You: From this moment until the trial starts, you're going to have to tell me everything and we need to prepare as much evidence as possible.
 Santa: Ho, ho, ho! That's the spirit, young lad! #laugh
 Santa: Very well then! Where should we start?
@@ -37,6 +38,15 @@ You: Do you mind if I take a copy for the trial?
 Santa: Why of course!
 Santa: Just don't let any kids see it for next year! #laugh
 EVIDENCE:NAUGHTY_LIST
+
+Santa: At the beginning of December, we distribute the Christmas Carols!
+You: The Carols? They're made by you?
+Santa: Ho, ho, ho! Not by me, young, I couldn't sing to save my life! #laugh
+Santa: They're made by the elves each year. Nearly won Grammies, they have!
+You: That's impressive.
+Santa: Have last year's copy!
+You: ...thank you?
+EVIDENCE:CAROLS
 
 
 You: And what do you do on the night of Christmas Eve?
@@ -70,15 +80,12 @@ EVIDENCE:HEALTH_REPORT
 You: Anyways, let's talk about your reindeer.
 You: You're being charged on several counts of animal cruelty, including immoral labour and forced captivity.
 Santa: Nonsense! My reindeer have been part of my family since the beginning!
-Santa: I raised them from calves and have the elves take care of them every day!
-Santa: I have a box 
 You: I guess these charges are more like accusations. I don't see us losing unless they have hard proof of mistreatment.
-You: Do you have a copy of your reindeer caretaking schedule?
 Santa: Of course. I'd be nothing without my reindeer.
 Santa: I always keep a pack of their food with me!
 Santa: Almost knicked my bottoms many times because of that! #laugh
-Santa: Would you like some? I've got plenty!
-You: Um... sure...?
+Santa: Would you like some? I've got plenty! It takes so good, you can't stop eating them!
+You: You've eaten their food?
 EVIDENCE:REINDEER_FOOD
 
 You: Thanks. Let's move onto your elves.

@@ -1,3 +1,10 @@
+EXTERNAL complete()
+EXTERNAL shake()
+EXTERNAL play(string id)
+EXTERNAL pause(string id)
+EXTERNAL resume(string id)
+EXTERNAL stop(string id)
+
 VAR organisation = false
 VAR accent = false
 VAR reindeer = false
@@ -10,10 +17,13 @@ VAR asked_reindeer = false
 VAR asked_shed = false
 VAR asked_lock = false
 
+~play("CASE_START")
 Judge: The court is now again in session for the trial of Mr.Santa Claus.
 Krampus: The prosecution is ready, Your Honour.
-You: The defense is also ready, Your Honour.
-Judge: Very well. Let us continue where we left off yesterday.
+You: Before we begin, Your Honour, my defendant would like to submit this as evidence.
+EVIDENCE:ATTENDANCE
+You: He believes it may be useful later on.
+Judge: Very well. Let us proceed then.
 Krampus: Thank you, Your Honour.
 Krampus: Today is another day we uncover one of Mr.Claus's acts of crime.
 Krampus: This one is related to none other than his previous reindeer.
@@ -29,32 +39,28 @@ Rose: It is none other than I!
 Rose: The great!
 Rose: The glorious!
 Rose: The majestic!
-Rose: Rose Witherspoon!
+Rose: Roooooooooooooseeeeeee Witherspoon!
 Rose: You are all now graced with my divine presence.
-Judge: Wow! It is lovely to meet you.
+Judge: Wow! It is lovely to meet you. #blush
 You: (What is going on here...)
 Krampus: Keep it short, woman. What is your occupation.
-Rose: I have a 
-I am an animal activist.
-Rose: I work for an organisation that handles rescued animals.
+Rose: I'm an animal rescuer! You could say I'm something like a vigilante.
 Krampus: It is to my understanding that you acquired critical evidence this morning?
 Rose: Indeed. I have acquired hard, undeniable evidence of Mr.Claus's animal cruelty.
 Judge: Well, let's get into it, shall we?
 Judge: Ms.Witherspoon, please testify to the court on the evidence you have.
-Rose: It would be my pleasure.
+Rose: It would be my absolute pleasure!
 
-EVENT:TESTIFY
+EVENT:TESTIFY:ROSE
 
-Rose: This morning, one of Mr.Claus's reindeers showed up at our doorstep.
+Rose: This morning, one of Mr.Claus's reindeers showed up at our doorstep at aroud 10:00 this morning.
 Rose: It appeared to be lost and shook.
 Rose: We took the kind animal in and ran many tests on it.
-Rose: Our tests revealed that the animal was severely malnourished.
-Rose: It was visibly exhausted and showed signs of dehydration.
-Rose: As the reindeer are under supervision of Mr.Claus, it is reasonable to suspect his mistreatment of his animals.
-Krampus: Your Honour, these are the tests in question.
-Judge: The course accepts this as evidence.
-
-EVIDENCE:REINDEER_TESTS
+Rose: Our tests revealed that the animal was severely malnourished!
+Rose: The poor reindeer had been eating poorly for so many years!
+Rose: It was also visibly exhausted and dehydrated.
+Rose: I suspect it didn't have any water the entire day!
+Rose: These reindeer are looked after by Santa, right? How could he treat them in such a way!
 
 Krampus: It is clear that Mr.Claus is in clear violation of animal rights.
 Krampus: No domesticated reindeer should live under those conditions.
@@ -71,7 +77,7 @@ You: (I'm missing too much information. I have to dig deeper.)
 You: (There are too many pieces missing...)
 
 { asked_organisation == false:
-    * [Ask about the organisation]
+    * [Ask about Rose]
         -> ORGANISATION
 }
 
@@ -89,16 +95,13 @@ You: (There are too many pieces missing...)
 
 ===ORGANISATION===
 ~asked_organisation = true
-You: The organisation you work for, what do they do?
-Rose: As I mentioned previously, I work for an organisation that rescues animals.
-You: When you say rescues animals, do you mean pick them up from the side of the road?
-Rose: We do that too, but we also act upon reports of abuse and liberate those animals.
-You: At what extent do you 'liberate' these animals?
-Rose: Well, to put it simply, we take them from their owners until they are deemed safe.
-Krampus: Your Honour, I would like to clarify that my witness's organisation has the authority to act on these requests.
-Krampus: They are part of a government branch with powers related to animal rights.
-Judge: Very well, that is accepted.
-You: (Not much traction to be gained there.)
+You: How are you doing today, Ms.Witherspoon?
+Rose: Me? I'm doing absolutely splendid, thank you for asking!
+Rose: I just got my hair done-up and fancy for this trial!
+Rose: Are you watching, world? Rose Witherspoon is going to steal everyone's hearts!
+Judge: Ohhh you've stolen mine, dear lady! #blush
+Krampus: Get back on track! I don't have all day.
+You: (Didn't learn anything there.)
 -> QUESTION
 
 
@@ -106,125 +109,87 @@ You: (Not much traction to be gained there.)
 ~asked_reindeer = true
 You: You said that the reindeer just showed up at your doorstep. Why do you think that is?
 Rose: There could be many different reasons. I couldn't tell you for certain.
-Rose: From what it looked like, the reindeer was very disoriented. It seemed to have been completely lost.
+Rose: From what it looked like, the reindeer was very disoriented. After all, it didn't have any food or water for so long.
+Rose: It was also walking around for such a long time.
 Krampus: A lost reindeer. How reflective of the owner's diligence and care towards his animals.
-You: (I see. It seems the reindeer was at the right place at the right time...)
+You: (Something's not adding up here...)
 -> QUESTION
 
 ===ALL_ASKED===
 You: Your Honour, everything the witness said seems to check out.
-You: However, there is a key piece of evidence that will prove my defendant's innocence.
-Judge: You may present it.
-You: (I need to find something that will show that the reindeer were looked after.)
-+ [HEALTH_REPORT]
+You: However, I believe Santa isn't the one responsible here.
+->RESPONSIBLE
+
+
+===RESPONSIBLE===
+You: The person(s) responsible was actually...
+* [Rose herself!]
+    Rose: What! How dare you fling baseless accusations at me!
+    Rose: I haven't even seen this reindeer before today!
+    Krampus: You twerp, Rose has alibis already. She hasn't been involved until today.
+    You: (Hm, did I get that wrong?)
+    -> RESPONSIBLE
+* [The elves!]
+    ->ELVES
+
+===ELVES===
+Judge: Ooo!
+Judge: Ahem, I mean, what makes you say that?
+You: I have a piece of evidence that will prove my defendant's non-involvment.
++ [ATTENDANCE]
+    -> ATTENDANCE
     You: This health report!
     Krampus: The Defense is grasping for straws, Your Honour.
     Judge: I don't tolerate this nonsense. The court is dismissed.
     You: (I messed that up...)
     -> END
-+ [NAUGHTY_LIST]
-    You: The Naughty List!
-    Krampus: ...doesn't show anything.
-    Judge: I don't see the connection here. 
-    Judge: I see no reason to continue. The court is dismissed.
-    You: (I messed that up...)
-    -> END
-+ [NOTEBOOK]
-    You: This notebook shows Santa's exact route he took that night!
-    Krampus: And?
-    Judge: I don't see the connection here. 
-    Judge: I see no reason to continue. The court is dismissed.
-    You: (I messed that up...)
-    -> END
-+ [REINDEER_SCHEDULE]
-    -> REINDEER_CONTINUE
-+ [WRITTEN_TESTIMONY]
-    You: This written testimony shows that Santa is treating the elves fairly!
-    Krampus: And?
-    Judge: I don't see the connection here. 
-    Judge: I see no reason to continue. The court is dismissed.
-    You: (I messed that up...)
-    -> END
-+ [PHOTOS]
-    You: The photos prove his innocence!
-    Judge: What... do they prove exactly?
-    Krampus: These are just photos of Santa... and Mrs.Claus?
-    Judge: I don't see the connection here. 
-    Judge: I see no reason to continue. The court is dismissed.
-    You: (I messed that up...)
-    -> END
++ [CAROLS]
+    Krampus: Are you trying to sing to us, twerp?
+    -> FAIL
++ [COOKIES]
+    Rose: Oh my, those would be terrible for my figure.
+    -> FAIL
++ [OTHER]
+    Judge: Aha of course!
+    Judge: Wait... what do these prove exactly?
+    Krampus: This proves nothing, twerp.
+    -> FAIL
 -> DONE
 
-===REINDEER_CONTINUE===
-You: This is a copy of the detailed caretaking schedule of each of the reindeers.
-You: Going through it, you can see that their feeding times, hygeine, and health are regularly recorded.
-You: It is clear that the reindeer were supposed to be looked after.
-Krampus: However, the evidence clearly shows that they were not.
-Krampus: Ms.Witherspoon carefully showed that.
-You: I'm not saying the reindeers weren't mistreated. I'm saying it wasn't Santa.
-Judge: Who was it then?
--> ACCUSE
+===FAIL===
+Judge: I don't see the connection here...
+Judge: I see no reason to continue! The court is dismissed.
+You: (I messed that up...)
+-> END
 
-===ACCUSE===
-You: (Who might be responsible for the reindeer when Santa's not there?)
- * [The elves]
-    Judge: An interesting proposition.
-    Judge: But what evidence do you have to support this statement?
-    -> ELF_EVIDENCE
- * [Rose Witherspoon]
-    Rose: What? How am I responsible for feeding the reindeer?
-    You: You lured it in with the scent of food!
-    Krampus: These are baseless accusations.
-    You: (That's true, I have no evidence for this...)
-    -> ACCUSE
- * [Krampus]
-    Krampus: What? On what grounds?
-    You: (That's true, I have no evidence for this...)
-    -> ACCUSE
+===ATTENDANCE
+You: Ms.Witherspoon stated that Prancer showed up at her doorstep at precisely 10:00 this morning.
+You: At 9:40 today, we took attendance of the elves.
+You: And it just so happened that the elf responsible for Prancer was missing during this time!
+Judge: Oh my! How suspicious!
+Krampus: That proves nothing, twerp.
+Krampus: And even if it did, that elf you mentioned happens to be here today.
+Krampus: And he's a key witness, hehehe.
+You: (Oh no, did Krampus see this coming?)
+Krampus: Indeed. My next witness is none other than the elf responsible for the reindeer.
+Krampus: And he can testify at length to Santa's mistreatment.
+You: (It was a setup! I'll have to be more careful next time.)
+-> CONTINUE
 
-===ELF_EVIDENCE===
-+ [REINDEER_SCHEDULE]
-    You: This document shows the daily schedules for all of Santa's reindeers.
-    You: It details their times for feeding, cleaning, and exercise.
-    You: And the individuals responsible for this are none other than the elves!
-    Krampus: Your Honour, even if that were true, it doesn't hide the fact that Mr.Claus is responsible for the elves, and ergo the reindeer.
-    Judge: That is true. We can only resolve this if we hear from a representative of the elves.
-    Judge: Prosecution, do you have someone willing to testify for this?
-    You: (Oh no, did Krampus see this coming?)
-    Krampus: Indeed. My next witness is none other than the elf responsible for the reindeer.
-    Krampus: And he can testify at length to Santa's mistreatment.
-    You: (It was a setup! I'll have to be more careful next time.)
-    -> CONTINUE
-+ [HEALTH_REPORT]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [NAUGHTY_LIST]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [NOTEBOOK]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [WRITTEN_TESTIMONY]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [PHOTOS]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
     
 ===CONTINUE===
 Krampus: Ms.Witherspoon, thank you for your cooperation.
-Krmapus: The prosecution calls forth Buddy the Elf.
-Buddy: That's me.
+Rose: Why, it was your pleasure to have me.
+You: ... our pleasure?
+Krampus: The prosecution calls forth Buddy the Elf.
+Buddy: Oh boy, that's me!
+
+// TODO
+
+
+
+
+
 Krampus: Witness, please state your name and occupation to the court.
 Buddy: It's Buddy the Elf. No last name. I'm the elf responsible for Santa's reindeer.
 Krampus: Buddy, is it true that Santa's reindeer are mistreated?
