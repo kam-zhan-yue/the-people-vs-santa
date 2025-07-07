@@ -10,15 +10,32 @@ VAR asked_reindeer = false
 VAR asked_shed = false
 VAR asked_lock = false
 
-Judge: The court is now in session for the trial of Mr.Santa Claus.
+Judge: The court is now again in session for the trial of Mr.Santa Claus.
 Krampus: The prosecution is ready, Your Honour.
 You: The defense is also ready, Your Honour.
 Judge: Very well. Let us continue where we left off yesterday.
-Krampus. Thank you, Your Honour.
-Krampus: The prosecution calls forth Ms.Rose Witherspoon, who has evidence that Santa is guilty of animal cruelty.
-Rose: It is my pleasure to be here.
+Krampus: Thank you, Your Honour.
+Krampus: Today is another day we uncover one of Mr.Claus's acts of crime.
+Krampus: This one is related to none other than his previous reindeer.
+You: (I've prepared for this. If there's no hard evidence, we should be in the clear.)
+Krampus: The court may be aware of the incident regarding his reindeer last night.
+Krampus: What you might not know is the horrid state of the poor animal!
+Krampus: I bring forward a surprise witness today who can testify to Santa's mistreatment of the beasts.
+You: (A surprise witness?!) #surprise
+Krampus: The prosecution calls forth Ms.Rose Witherspoon!
+Rose: Oh, it is simply my pleasure to be here, Mr.Krampus.
 Krampus: Witness, please state your name and profession to the court.
-Rose: My name is Rose Witherspoon. I am an animal activist.
+Rose: It is none other than I!
+Rose: The great!
+Rose: The glorious!
+Rose: The majestic!
+Rose: Rose Witherspoon!
+Rose: You are all now graced with my divine presence.
+Judge: Wow! It is lovely to meet you.
+You: (What is going on here...)
+Krampus: Keep it short, woman. What is your occupation.
+Rose: I have a 
+I am an animal activist.
 Rose: I work for an organisation that handles rescued animals.
 Krampus: It is to my understanding that you acquired critical evidence this morning?
 Rose: Indeed. I have acquired hard, undeniable evidence of Mr.Claus's animal cruelty.
