@@ -1,10 +1,3 @@
-EXTERNAL complete()
-EXTERNAL shake()
-EXTERNAL play(string id)
-EXTERNAL pause(string id)
-EXTERNAL resume(string id)
-EXTERNAL stop(string id)
-
 VAR organisation = false
 VAR accent = false
 VAR reindeer = false
@@ -17,7 +10,8 @@ VAR asked_reindeer = false
 VAR asked_shed = false
 VAR asked_lock = false
 
-~play("CASE_START")
+EVENT:PLAY:CASE_START
+
 Judge: The court is now again in session for the trial of Mr.Santa Claus.
 Krampus: The prosecution is ready, Your Honour.
 You: Before we begin, Your Honour, my defendant would like to submit this as evidence.
@@ -135,7 +129,8 @@ You: The person(s) responsible was actually...
 ===ELVES===
 Judge: Ooo!
 Judge: Ahem, I mean, what makes you say that?
-You: I have a piece of evidence that will prove my defendant's non-involvment.
+You: I have a piece of evidence that will prove my defendant's non-involvement.
+EVENT:EVIDENCE
 + [ATTENDANCE]
     -> ATTENDANCE
     You: This health report!
@@ -183,37 +178,49 @@ Rose: Why, it was your pleasure to have me.
 You: ... our pleasure?
 Krampus: The prosecution calls forth Buddy the Elf.
 Buddy: Oh boy, that's me!
+Krampus: Elf. State your name and occupation.
+Buddy: I'm Buddy the Elf! First Name: Buddy, Last Name: The Elf!
+Buddy: I'm Santa's one and only head elf!
+Buddy: Cleaning, feeding, wrapping, singing...
+Buddy: There's nothing I can't do!
+Krampus: Can you be more brief?
+Buddy: Why what a mean thing to say!
+Krampus: Can you testify to the court what you observed? And keep it snappy.
+Buddy: Why, that I can do!
 
-// TODO
+EVENT:TESTIFY:BUDDY
+
+Buddy: It was a fog-enveloped night.
+Buddy: Snow was falling lightly upon the hardened cement outside our lodging.
+Buddy: When the slience of the evening was suddenly pierced by a shrieking cry!
+Buddy: I woke in fright and rushed to the attend to the reindeers.
+Buddy: Alas, I have grown all too comfortable with their painful cries.
+Buddy: Banging was coming from the shed as I slowly approached it.
+Buddy: When the wooden doors burst open from the inside!
+Buddy: Prancer dashed by my side, knocking me away.
+Buddy: I chased after him all night and morning.
+Buddy: But to no avail.
+Buddy: By the time I had gotten back, the other elves had already reported this.
 
 
+Judge: What a dreadful story! Are you doing alright, son?
+Buddy: Why yes, thank you for your concern, Your Honour.
+You: (At this rate, I'm gonna lose the judge to their side!)
+Krampus: Elf. Why do you think Prancer escaped the shed?
+Buddy: I'm afraid to say, we simply don't have enough resources to take care of them.
+Buddy: Santa doesn't give us enough food nor time. Us elves are expected to work day and night attending to these reindeer.
+Buddy: We barely have time to ourselves! How can we be expected to take care of nine gigantic beasts!
+Buddy: And that's why I'm here today. Santa, bless his poor heart, has tried his best, but his practices are too outdated.
+Buddy: It's time for us to move on.
+Judge: What a touching perspective...
+You: Excuse me, Your Honour! I believe I am owed a cross-examination!
+Judge: You really want to bully this poor boy? That's not a good look, you know.
+You: It's your job!
+Judge: Very well, you may begin your cross examination!
+
+EVENT:CROSS_EXAMINATION
 
 
-
-Krampus: Witness, please state your name and occupation to the court.
-Buddy: It's Buddy the Elf. No last name. I'm the elf responsible for Santa's reindeer.
-Krampus: Buddy, is it true that Santa's reindeer are mistreated?
-Buddy: Oh yeah. With a capital 'O'.
-Buddy: I'm resposible for the poor guys, but I dont get enough resources to take care of them.
-Buddy: I mean, there are 9 of these dudes. Each of them super magical and super strong.
-Buddy: And you expect a mere kid to handle all of these?
-Buddy: It's a recipe for disaster, I'm telling you.
-Buddy: Not to mention the working conditions my fellow elves and I go through day-by-day.
-Buddy: It's not our fault we can't take care of the reindeer when we can't take care of ourselves.
-You: (This is escalating...)
-Judge: Are you willing to testify to the court on the events of last night?
-Buddy: Oh yeah, I can.
-Buddy: You better buckle in your belts for this one.
-Judge: Very well, you may begin.
-
-EVENT:TESTIFY
-
-Buddy: So there I was at night. All foggy and dark.
-Buddy: When I heard shrieks coming from the shed!
-Buddy: As I approached the shed, Prancer bursts from the shed door!
-Buddy: He must have been so desperate to escape, the poor animal.
-Buddy: I chased after him, but couldn't catch up.
-Buddy: By the time I got back, the others had already reported him as missing.
 -> BUDDY_QUESTION
 
 
@@ -230,156 +237,181 @@ You: (He has to be lying. I'll need something to contradict his testimony...)
         -> BUDDY_LOCK
 }
 
-{ asked_organisation == true and asked_reindeer == true:
+{ asked_shed == true and asked_lock == true:
     -> BUDDY_ALL_ASKED
 }
 
 ===BUDDY_SHED===
 ~asked_shed = true
 You: Are all of Santa's reindeer kept in that shed?
-Buddy: Yeap, they're all stuffed in there ike sardines.
-Buddy: I keep telling everyone there's not enough space, but no one listens.
-You: If that's the case. Why did only Prancer escape once the lock was broken?
-Buddy: Huh? ... The others must have been shocked, I guess?
-You: But if all of the reindeer were being mistreated, wouldn't all of them feel desperate to escape?
-Buddy: That may be true, but...
-Buddy: There's no way to tell right! We can't make the reindeer testify!
--> BUDDY_SHED
+Buddy: Of course, but the shed is so small, they're packed like sardines.
+Buddy: I keep insisting we get more space, but my concerns fall on deaf ears.
+You: If that's the case, why did only Prancer escape?
+Buddy: The other reindeer were too tired, I'd say. All of them have had a hard time recently, and it doesn't help that they aren't fed well.
+Judge: The poor animals...
+You: (He turned the tide on me!)
+-> BUDDY_QUESTION
 
 ===BUDDY_LOCK===
 ~asked_lock = true
 You: The lock that secured it, how was it broken?
-Buddy: The reindeer are freakishly strong. I mean, they fly around the world.
-Buddy: It's very likely that Prancer broke it out of desperation.
+Buddy: Prancer must have been so desperate to escape, he broke the lock from inside! I can only sympathise with him...
+Buddy: Animals can do amazing things when pushed to the brink. I'm sure we can all relate to that.
+Judge: I totally get you, Buddy.
+You: (This is going to be hard...)
 -> BUDDY_QUESTION
 
 
 ===BUDDY_ALL_ASKED===
-You: Well, Your Honour. I'm ready to present my case.
-Judge: Very well, you may begin.
-You: (I need to show that Buddy was with Prancer the entire time...)
+You: (I know Buddy helped Prancer escaped. But I can't prove that with what little evidence I have)
+You: (I'll have to take a different route.)
+You: (I need to put him on the spot!)
+-> BUDDY_ACCUSE
+    
+    
+===BUDDY_ACCUSE
+You: Buddy! I have reason to believe that it was not Prancer who broke the lock! It was...
++ [You!]
+    Buddy: How.. how can you say that!
+    Buddy: If you want proof, I got proof!
+    Krampus: Buddy, not yet!
+    Buddy: I have photographic evidence that I was searching for Prancer with all my might!
+    Krampus: (He's gone and done it...)
+    You: Oh? And what evidence might that be?
+    Buddy: Feast your eyes on my brilliant photography!
+    EVENT:PHOTO:TRACKS
+    Buddy: These are photos of Prancer's tracks.
+    Buddy: I followed them all the way from the shed.
+    Buddy: I never go anywhere without my camera.
+    Buddy: Before I wanted to be an elf, I wanted to be a wedding photographer!
+    -> INTERROGATE_PHOTO
+* [Rose!]
+    Buddy: What are you talking about?
+    You: You two are in cahoots!
+    Krampus: Rose has already left the buliding to take papparazzi photos.
+    Judge: Let me go!
+    You: Ah.
+    -> BUDDY_ACCUSE
 
-+ [REINDEER_SCHEDULE]
-    You: This schedule!
-    Judge: Bringing it up again?
-    You: It shows that the reindeer were meant to be fed before escaping!
-    Buddy: We didn't have enough food to feed them. Of course they'd go hungry.
-    Judge; There's no need to bring this evidence up again.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
+===INTERROGATE_PHOTO
+You: (There's something off about this photo... if I look carefully, I can just about see...)
+EVENT:EVIDENCE
++ [COOKIES]
+    -> COOKIES_PHOTO
++ [OTHER]
+    You: No, that's not it, it's something else...
+    ->INTERROGATE_PHOTO
+    
+===COOKIES_PHOTO
+EVENT:PHOTO:HIDE
+You: Your Honour! Buddy was not the one who took Prancer to Rose!
+Buddy: Of course it wasn't me!
+
+EVENT:SHAKE
+EVENT:PLAY:CASE_BREAK
+You: It was the double butter triple chocolate chip cookies!
+Judge: Whaaaat?!
+Krampus: When can we escape these blasted cookies.
+You: Buddy laid a trail of these cookies, leading Prancer to Rose!
+You: He's the one who broke Prancer out and framed all this.
+Krampus: You imbecile, are you telling me that Santa's reindeers eat cookies?! I find that absolutely preposterous.
+You: (He's right... unless there was something to prove him wrong.)
+EVENT:EVIDENCE
++ [REINDEER_FOOD]
+ -> SUBMIT_FOOD
++ [OTHER]
+    Krampus: That shows nothing!
+    Judge: Of course reindeers don't eat cookies! You are a buffoon!
+    You: (What was it then?!)
     -> END
-+ [HEALTH_REPORT]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [NAUGHTY_LIST]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [NOTEBOOK]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
+
+==SUBMIT_FOOD
+You: This is a box of food given to all of Santa's reindeers. 
+Buddy: Wait, don't-
+You: But if I open them...
+EVENT:SHAKE
+You: They are full of cookies!
+Judge: I can't believe it!
+Krampus: What kind of monster...
+Buddy: I swear I've never seen that before in my life!
+Buddy: Lies, I tell you, lies!
+You: Buddy has been feeding the reindeer purely cookies over the last few years, leading to their severe malnutrition and current state.
+Buddy: I have nothing to do with the cookies!
+You: Is that why you coerced children around the world to eat cookies left out by Santa?
+Buddy: I... I don't know what you are talking about.
+You: "If you don’t eat Santa’s treats tonight"
+You: "He’ll think you’ve been naughty, but that's not quite right"
+You: "So munch those cookies to keep his delight!"
+-> CAROL
+
+===CAROL
+You: Why that sounds exactly like...
+EVENT:EVIDENCE
++ [CAROLS]
+    -> SUBMIT_CAROLS
++ [OTHER]
+    You: (That's not right...)
+    -> CAROL
+    
+
+==SUBMIT_CAROLS
+EVENT:SHAKE
+You: The Christmas Carols you wrote!
+Buddy: No! That's not true
+Krampus: You imbecile, stop talking!
+Krampus: These allegations have gone far enough. You stil lack hard proof of Buddy's involvement.
+You: You're right, Krampus. But that was until he showed me the photo he took.
+You: I couldn't help but notice, they were so similar to something I had seen before.
+You: And I couldn't understand why until now.
+-> PHOTOS
+    
+
+===PHOTOS
+You: This will be my last piece of evidence to the court.
+EVENT:EVIDENCE
 + [PHOTOS]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [ATTENDANCE]
-    -> BUDDY_CONTINUE
+    -> SUBMIT_PHOTOS
++ [OTHER]
+    You: (That's not right...)
+    -> PHOTOS
 
+===SUBMIT_PHOTOS
+Buddy: I've never seen those before!
+You: Santa has been receiving threats attached with these photos.
+You: Look at the film used! They match Buddy's previous photos!
 
-===BUDDY_CONTINUE===
-You: This morning. Santa took the elves' attendance.
-You: And curiously... there was one elf missing from this list.
-You: That elf is you, Buddy!
-You: Where were you at the time of the attendance?
-Buddy: Me? I was still out trying to find Prancer.
-Buddy: He's my darling.
-Krampus: Buddy, I believe you have hard evidence to prove this as well, no?
-You: (Evidence?!)
-Buddy: Of course. I was taking photos of his footprints as I went
-EVIDENCE:FOOTPRINT_PHOTOS
-You: (Do these look familiar?)
-Buddy: Unfortunately, I couldn't find him.
-You: That's interesting that you bring these up.
-You: Because I've got something even better.
-+ [REINDEER_SCHEDULE]
-    You: This schedule!
-    Judge: Bringing it up again?
-    You: It shows that the reindeer were meant to be fed before escaping!
-    Buddy: We didn't have enough food to feed them. Of course they'd go hungry.
-    Judge; There's no need to bring this evidence up again.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [HEALTH_REPORT]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [NAUGHTY_LIST]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [NOTEBOOK]
-    Judge: I don't see how that is relevant.
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
-+ [PHOTOS]
-    -> FINAL
-+ [ATTENDANCE]
-    Judge: Why are we seeing this again?
-    Judge: The Persecution stands. The case is dismissed.
-    You: (I really messed that up...)
-    -> END
--> END
-
-
-===FINAL===
-You: These photos came with threats addressed to Santa.
-Krampus: And how are these relevant?
-You: Look carefully at the film and the camera angles.
-Krampus: That shows nothing.
-You: They're the same.
-Krampus: You can't prove that.
-You: I can. We can confirm this if we looked at Buddy's camera.
-Buddy: That's not allowed!
-Judge: Order in the court. Defense, please continue.
-You: I was wondering why these photos were so close up. There's no way a normal journalist could have taken these.
-You: These photos were taken by Buddy. He perpetuated this event. The entire trial.
-You: You convinced Kevin to frame Santa to not be on the Naughty List.
-Buddy: Did not!
-You: You took illicit photos of Santa and attached them with threats to intimidate him.
-Buddy: That wasn't me!
-You: I've always been wondering. Why are there so many photos of Mrs.Claus mixed in here?
-You: Until I realised. This isn't about Santa. This is about you and her!
+EVENT:SHAKE
+Buddy: NO!
+You: Well, we can take your camera right now and prove everyone otherwise.
+Buddy: That's... not allowed...
+Judge: Oh it is.
+Krampus: It is.
+You: But I've always wondered... Why are there so many photos of Mrs.Claus mixed in here?
+You: Until I realised. This isn't about Santa. 
+EVENT:SHAKE
+You: This is about you and her!
 You: Your Honour, this is a crime of passion.
 Judge: What are you talking about?
-Buddy: I don't know... what you mean...
-Krampus: Objection! Baseless accusations!
-Judge: Defense, wrap it up.
+EVENT:SHAKE
+Buddy: Objection! Objection! Objection! Stop!
 You: If we open Buddy's camera. I think we'll find a lot more than just photos of reindeer.
-Buddy: ...
-You: And just conveniently, he brought it to the courtroom.
-Buddy: No! Don't take it from me!
-Buddy: Fine! I did it! I let Prancer go!
-You: And the mistreatment?
-Buddy: I didn't feed him for several days...
-You: And the kid?
-Buddy: I told him to eat the milk and cookies!
-Krampus: ...
-Judge: ...
+EVENT:SHAKE
 Buddy: You don't understand! It was out of love!
 Buddy: None of you would understand it!
 Buddy: He doesn't deserve her! He doesn't deserve any of it!
-You: I think we've heard enough.
-Judge: I agree. This case is closed.
+You: Buddy manipulated children around the world.
+You: Starved Santa's reindeers for years.
+You: Framed an escape and brought them to the public eye.
+You: Just to bring down Santa.
+You: Just to be with Mrs.Claus.
+Judge: Oh. My God.
+Krampus: This is... new.
+Buddy: ...
+You: You can take his silence for an answer. And I'm sure his camera will reveal the truth.
+Judge: I've heard enough, this case is closed!
+You: Thank you, ladies and gentlemen.
+You: And have a Merry Christmas.
+EVENT:COMPLETE
 -> END
 
 

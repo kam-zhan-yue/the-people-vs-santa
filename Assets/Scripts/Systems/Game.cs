@@ -23,6 +23,7 @@ public abstract class Game : MonoBehaviour
     private const string CROSS_EXAMINATION = "CROSS_EXAMINATION";
     private const string OTHER = "OTHER";
     private const string SHAKE = "SHAKE";
+    private const string PHOTO = "PHOTO";
     private const string COMPLETE = "COMPLETE";
     private const string PLAY = "PLAY";
     private const string PAUSE = "PAUSE";
@@ -80,20 +81,6 @@ public abstract class Game : MonoBehaviour
     {
         Enter();
         _inkStory = new Story(inkFile.text);
-        _inkStory.BindExternalFunction("complete", SetCompleted);
-        _inkStory.BindExternalFunction("shake", Shake);
-        _inkStory.BindExternalFunction("play", (string id) =>  {
-            PlayAudio(id);
-        });
-        _inkStory.BindExternalFunction("pause", (string id) =>  {
-            PauseAudio(id);
-        });
-        _inkStory.BindExternalFunction("resume", (string id) =>  {
-            ResumeAudio(id);
-        });
-        _inkStory.BindExternalFunction("stop", (string id) =>  {
-            StopAudio(id);
-        });
     }
 
     public void Continue()
@@ -203,6 +190,17 @@ public abstract class Game : MonoBehaviour
             if (splits.Length >= 2)
                 PauseAudio(splits[1]);
             Continue();
+        } else if (eventId.StartsWith(COMPLETE))
+        {
+            SetCompleted();
+            Continue();
+        }
+        else if (eventId.StartsWith(PHOTO))
+        {
+            string[] splits = eventId.Split(':', 2);
+            if (splits.Length >= 2)
+                popups.SpeakerPopup.ShowPhoto(splits[1]);
+            Continue();
         }
         else
         {
@@ -243,6 +241,7 @@ public abstract class Game : MonoBehaviour
             _inkStory.ChooseChoiceIndex(other.index);
             await UniTask.WaitForEndOfFrame();
             Continue();
+            return;
         }
         
         Debug.LogError($"Could not choose {evidence.name!}");

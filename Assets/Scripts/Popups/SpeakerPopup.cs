@@ -1,14 +1,25 @@
+using System;
 using System.Collections.Generic;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
+public class Photo
+{
+    public string id;
+    public Sprite image;
+}
+
 public class SpeakerPopup : Popup
 {
+    [SerializeField] private Photo[] photos = Array.Empty<Photo>();
     [SerializeField] private Image background;
     [SerializeField] private Image main;
     [SerializeField] private Image foreground;
+    [SerializeField] private Image photo;
+    [SerializeField] private RectTransform filter;
     
     private Game _game;
 
@@ -22,6 +33,28 @@ public class SpeakerPopup : Popup
         background.gameObject.SetActiveFast(false);
         foreground.gameObject.SetActiveFast(false);
         main.gameObject.SetActiveFast(false);
+        filter.gameObject.SetActiveFast(false);
+        photo.gameObject.SetActiveFast(false);
+    }
+
+    public void ShowPhoto(string id)
+    {
+        if (id == "HIDE")
+        {
+            photo.gameObject.SetActiveFast(false);
+            filter.gameObject.SetActiveFast(false);
+            return;
+        }
+        
+        for (int i = 0; i < photos.Length; ++i)
+        {
+            if (photos[i].id == id && photos[i].image)
+            {
+                filter.gameObject.SetActiveFast(true);
+                photo.gameObject.SetActiveFast(true);
+                photo.sprite = photos[i].image;
+            }
+        }
     }
 
     public void Show(string speakerId)

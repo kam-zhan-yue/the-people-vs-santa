@@ -643,6 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: b7933b6de62754bc9acf79b538e31dd4, type: 2}
   startingEvidence:
+  - {fileID: 11400000, guid: 5a2669fd174fc4eeba89964d6c054ec0, type: 2}
   - {fileID: 11400000, guid: bdc0ebfe3bd1f48a39d99c6978ccae9c, type: 2}
   - {fileID: 11400000, guid: 99e014bc9be614bb28606e80ceb1298c, type: 2}
   - {fileID: 11400000, guid: 29dc4028596f94cc59d688216a3b4ebd, type: 2}
