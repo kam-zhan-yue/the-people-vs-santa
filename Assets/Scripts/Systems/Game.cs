@@ -156,7 +156,7 @@ public abstract class Game : MonoBehaviour
         else if (eventId.StartsWith(EVIDENCE))
         {
             State = GameState.EvidenceSelect;
-            popups.ActionPopup.ShowEvidenceSelect(true);
+            popups.ActionPopup.ShowEvidenceSelect();
         }
         else if (eventId.StartsWith(SHAKE))
         {
@@ -283,10 +283,5 @@ public abstract class Game : MonoBehaviour
     private void StopAudio(string id)
     {
         ServiceLocator.Instance.Get<IAudioService>().Stop(id);
-    }
-
-    private void Shake()
-    {
-        popups.Shake();
     }
 }

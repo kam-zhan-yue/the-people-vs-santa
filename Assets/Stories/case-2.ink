@@ -302,6 +302,8 @@ EVENT:EVIDENCE
     
 ===COOKIES_PHOTO
 EVENT:PHOTO:HIDE
+
+EVENT:STOP:CASE_START
 You: Your Honour! Buddy was not the one who took Prancer to Rose!
 Buddy: Of course it wasn't me!
 

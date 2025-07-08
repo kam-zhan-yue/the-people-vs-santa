@@ -8,7 +8,8 @@ using UnityEngine;
 public class DialoguePopup : Popup
 {
     private const float THRESHOLD = 0.15f;
-    private const float READ_TIME = 0.5f;
+    private const float SKIP_READ_TIME = 0.15f;
+    private const float AUTOPLAY_READ_TIME = 0.5f;
     
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
@@ -42,11 +43,14 @@ public class DialoguePopup : Popup
             ToggleAutoPlay();
         }
         
-        if (_game.State != GameState.Dialogue)
-            return;
-        
         if (IsDown())
             ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
+
+        if (_game.State != GameState.Dialogue)
+        {
+            _downTimer = 0f; 
+            return;
+        }
         
         if (_autoPlaying)
         {
@@ -77,7 +81,7 @@ public class DialoguePopup : Popup
                     ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
                     FinishTyping();
                 }
-                else if (_downTimer >= THRESHOLD + READ_TIME)
+                else if (_downTimer >= THRESHOLD + SKIP_READ_TIME)
                 {
                     ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
                     _game.Continue();
@@ -103,7 +107,7 @@ public class DialoguePopup : Popup
         if (!_isTyping)
         {
             _autoPlayTimer += Time.deltaTime;
-            if (_autoPlayTimer >= READ_TIME)
+            if (_autoPlayTimer >= AUTOPLAY_READ_TIME)
             {
                 ServiceLocator.Instance.Get<IAudioService>().Play("CLICK");
                 _game.Continue();

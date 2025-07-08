@@ -31,6 +31,6 @@ public class TestimonyPopup : Popup
 
     private void BackButtonClicked()
     {
-        _actionPopup.ShowChoices();
+        _actionPopup.TestimonyBackButtonClicked();
     }
 }

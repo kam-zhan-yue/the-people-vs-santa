@@ -4,14 +4,11 @@ using Ink.Runtime;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ChoiceSelectPopup : Popup
 {
     [SerializeField] private ChoiceSelectPopupItem samplePopupItem;
     [SerializeField] private RectTransform choiceHolder;
-    [SerializeField] private Button testimonyButton;
-    [SerializeField] private Button evidenceButton;
 
     private List<ChoiceSelectPopupItem> _popupItems = new();
     
@@ -27,8 +24,6 @@ public class ChoiceSelectPopup : Popup
     
     protected override void InitPopup()
     {
-        testimonyButton.onClick.AddListener(TestimonyButtonClicked);
-        evidenceButton.onClick.AddListener(EvidenceButtonClicked);
     }
 
     public override void ShowPopup()
@@ -74,17 +69,7 @@ public class ChoiceSelectPopup : Popup
 
     public void Select(ChoiceSelectPopupItem item)
     {
-        HidePopup();
+        _actionPopup.ChoiceSelected();
         _game.Choose(item.Choice).Forget();
-    }
-
-    private void TestimonyButtonClicked()
-    {
-        _actionPopup.ShowTestimony();
-    }
-
-    private void EvidenceButtonClicked()
-    {
-        _actionPopup.ShowEvidenceSelect(false);
     }
 }

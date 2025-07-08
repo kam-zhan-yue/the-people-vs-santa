@@ -43,7 +43,7 @@ public class EvidencePopup : Popup
 
     private void OkayButtonClicked()
     {
-        HidePopup();
+        _actionPopup.OkayButtonClicked();
         _game.Continue();
     }
 }

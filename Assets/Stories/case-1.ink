@@ -98,11 +98,12 @@ You: (Let's learn more about the case...)
     -> MILK
 * [Ask about the boot]
     -> BOOT
-* [I have no questions]
++ [I'm ready to present!]
     -> ARGUMENT
 
 
 ===PARENTS===
+~ parents = true
 You: You mentioned your parents called the police in the morning. Do you sleep in a separate room to them?
 Kevin: Yes! I'm a big boy now. I don't need their company anymore.
 Kevin: Although I do get scared at night. #scared
@@ -124,7 +125,6 @@ Kevin: Although I do get scared at night. #scared
     Judge: There, there my boy, don't let the big man scare you.
     You: Hey! Your Honour!
     Judge: Ah whoops, can't help it. He's too cute.
-    ~ parents = true
     You: (Is this kid hiding something ...?)
     -> QUESTION
 + [Ask about the morning]
@@ -138,6 +138,7 @@ Kevin: Although I do get scared at night. #scared
 
 
 ===MILK===
+~ cookies = true
 You: Why were there milk and cookies left out?
 Kevin: Isn't it obvious? Everyone knows you leave milk and cookies out for Santa.
 You: Doesn't that mean you were expecting Santa to be there?
@@ -159,7 +160,6 @@ You: (Dammit, what can I do now?)
     Kevin: I would do anything to eat my mum's double butter triple chocolate chip cookies!
     Kevin: Anything, I tell you!
     You: (Hmm, I think I've learned something new)
-    ~ cookies = true
     -> QUESTION
 + [Ask something else]
     -> QUESTION
@@ -313,6 +313,11 @@ EVENT:EVIDENCE
     You: (Whoops.)
     You: One moment please!
     ->EVIDENCE
++[OTHER]
+    Krampus: What is this, twerp?
+    Judge: I'm getting too old for this...
+    You: Sorry! That's the wrong thing. I was meant to show...
+    -> EVIDENCE
 
 ===CORRECT===
 EVENT:STOP:CASE_START

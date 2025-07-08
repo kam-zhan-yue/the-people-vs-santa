@@ -37,7 +37,6 @@ public class EvidenceSelectPopup : Popup
         ShowPopup();
         _selected = null;
         _interactable = interactable;
-        backButton.gameObject.SetActiveFast(!_interactable);
         ShowItems();
         SelectFirstItem();
     }
@@ -94,12 +93,12 @@ public class EvidenceSelectPopup : Popup
 
     private void BackButtonClicked()
     {
-        _actionPopup.ShowChoices();
+        _actionPopup.EvidenceBackButtonClicked();
     }
 
     private void PresentButtonClicked()
     {
-        HidePopup();
+        _actionPopup.EvidenceSelected();
         _game.Choose(_selected.Evidence).Forget();
     }
 }
