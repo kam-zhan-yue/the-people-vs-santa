@@ -1715,7 +1715,7 @@ MonoBehaviour:
   showSequence: {fileID: 0}
   hideSequence: {fileID: 0}
   resetSequence: {fileID: 0}
-  nextScene: Introduction
+  nextScene: Tutorial
   groups:
   - {fileID: 892172691}
   - {fileID: 988409317}

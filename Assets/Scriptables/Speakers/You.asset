@@ -15,6 +15,6 @@ MonoBehaviour:
   displayName: You
   talkId: YOU
   background: {fileID: 15265987429006280, guid: 32128d74315fd43238d8f90523cc8f2b, type: 3}
-  main: {fileID: 0}
+  main: {fileID: -4450231695622961261, guid: e1bd70542d3af4536b1e72cdb3cbaa29, type: 3}
   foreground: {fileID: -402941942637492453, guid: f749324da42304199becb41b66a4e2ff, type: 3}
   expressions: []

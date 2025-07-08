@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec77f2e536c2a4d8c9606c361fd41a10, type: 3}
+  m_Name: BUDDY
+  m_EditorClassIdentifier: 
+  testimony: 'Buddy: It was a fog-enveloped night.
+
+    Buddy: Snow was falling lightly
+    upon the hardened cement outside our lodging.
+
+    Buddy: When the slience of
+    the evening was suddenly pierced by a shrieking cry!
+
+    Buddy: I woke in fright
+    and rushed to the attend to the reindeers.
+
+    Buddy: Alas, I have grown all
+    too comfortable with their painful cries.
+
+    Buddy: Banging was coming from
+    the shed as I slowly approached it.
+
+    Buddy: When the wooden doors burst open
+    from the inside!
+
+    Buddy: Prancer dashed by my side, knocking me away.
+
+    Buddy:
+    I chased after him all night and morning.
+
+    Buddy: But to no avail.
+
+    Buddy:
+    By the time I had gotten back, the other elves had already reported this.'

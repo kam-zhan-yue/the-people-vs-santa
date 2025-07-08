@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec77f2e536c2a4d8c9606c361fd41a10, type: 3}
+  m_Name: ROSE
+  m_EditorClassIdentifier: 
+  testimony: 'Rose: This morning, one of Mr.Claus''s reindeers showed up at our doorstep
+    at aroud 10:00 this morning.
+
+    Rose: It appeared to be lost and shook.
+
+    Rose:
+    We took the kind animal in and ran many tests on it.
+
+    Rose: Our tests revealed
+    that the animal was severely malnourished!
+
+    Rose: The poor reindeer had been
+    eating poorly for so many years!
+
+    Rose: It was also visibly exhausted and
+    dehydrated.
+
+    Rose: I suspect it didn''t have any water the entire day!
+
+    Rose:
+    These reindeer are looked after by Santa, right? How could he treat them in such
+    a way!'
