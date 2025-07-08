@@ -22,6 +22,12 @@ public abstract class Game : MonoBehaviour
     private const string TESTIFY = "TESTIFY";
     private const string CROSS_EXAMINATION = "CROSS_EXAMINATION";
     private const string OTHER = "OTHER";
+    private const string SHAKE = "SHAKE";
+    private const string COMPLETE = "COMPLETE";
+    private const string PLAY = "PLAY";
+    private const string PAUSE = "PAUSE";
+    private const string RESUME = "RESUME";
+    private const string STOP = "STOP";
 
     public GameDatabase database;
     public List<Evidence> startingEvidence = new();
@@ -164,6 +170,39 @@ public abstract class Game : MonoBehaviour
         {
             State = GameState.EvidenceSelect;
             popups.ActionPopup.ShowEvidenceSelect(true);
+        }
+        else if (eventId.StartsWith(SHAKE))
+        {
+            popups.Shake();
+            Continue();
+        }
+        else if (eventId.StartsWith(PLAY))
+        {
+            string[] splits = eventId.Split(':', 2);
+            if (splits.Length >= 2)
+                PlayAudio(splits[1]);
+            Continue();
+        }
+        else if (eventId.StartsWith(STOP))
+        {
+            string[] splits = eventId.Split(':', 2);
+            if (splits.Length >= 2)
+                StopAudio(splits[1]);
+            Continue();
+        }
+        else if (eventId.StartsWith(RESUME))
+        {
+            string[] splits = eventId.Split(':', 2);
+            if (splits.Length >= 2)
+                ResumeAudio(splits[1]);
+            Continue();
+        }
+        else if (eventId.StartsWith(PAUSE))
+        {
+            string[] splits = eventId.Split(':', 2);
+            if (splits.Length >= 2)
+                PauseAudio(splits[1]);
+            Continue();
         }
         else
         {
