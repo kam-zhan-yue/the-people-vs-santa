@@ -56,7 +56,7 @@ MonoBehaviour:
   resetSequence: {fileID: 0}
   photos:
   - id: TRACKS
-    image: {fileID: 2884869952393753993, guid: 4952ccb319ef34141b809615032af1c5, type: 3}
+    image: {fileID: 6079687506407424965, guid: aa088a881110a4de1b1b383e192e4941, type: 3}
   background: {fileID: 1277425837444300753}
   main: {fileID: 1594591610445279326}
   foreground: {fileID: 2809700679126614663}
