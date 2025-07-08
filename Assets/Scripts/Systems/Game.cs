@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Ink.Runtime;
 using Kuroneko.AudioDelivery;
 using Kuroneko.UtilityDelivery;
@@ -8,6 +9,7 @@ using UnityEngine;
 
 public enum GameState
 {
+    None,
     Dialogue,
     Evidence,
     ChoiceSelect,
@@ -32,6 +34,7 @@ public abstract class Game : MonoBehaviour
 
     public GameDatabase database;
     public List<Evidence> startingEvidence = new();
+    [SerializeField] private Scene defaultScene = new();
     [SerializeField] private TextAsset inkFile;
     [SerializeField] private Popups popups;
     [SerializeField] private string nextScene;
@@ -42,7 +45,7 @@ public abstract class Game : MonoBehaviour
 
     public string TestimonyID { get; private set; }
 
-    public GameState State { get; private set; } = GameState.Dialogue;
+    public GameState State { get; private set; } = GameState.None;
     
     private Story _inkStory;
 
@@ -74,13 +77,18 @@ public abstract class Game : MonoBehaviour
     protected virtual void Start()
     {
         Init();
-        Continue();
     }
 
     private void Init()
     {
-        Enter();
-        _inkStory = new Story(inkFile.text);
+        popups.SpeakerPopup.PreStart(defaultScene);
+        popups.FadeIn().OnComplete(() =>
+        {
+            Enter();
+            _inkStory = new Story(inkFile.text);
+            State = GameState.Dialogue;
+            Continue();
+        });
     }
 
     public void Continue()
@@ -97,8 +105,11 @@ public abstract class Game : MonoBehaviour
         else
         {
             State = GameState.Over;
-            Exit();
-            popups.CheckEndGame();
+            popups.FadeOut().OnComplete(() =>
+            {
+                Exit();
+                popups.CheckEndGame();
+            });
         }
     }
 

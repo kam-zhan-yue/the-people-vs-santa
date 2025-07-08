@@ -28,6 +28,7 @@ public class DialoguePopup : Popup
 
     protected override void InitPopup()
     {
+        HidePopup();
         autoPlayingText.gameObject.SetActiveFast(false);
     }
 
@@ -137,6 +138,7 @@ public class DialoguePopup : Popup
 
     public void ShowDialogue(string speaker, string line)
     {
+        ShowPopup();
         SetSpeaker(speaker);
         PlayDialogue(line);
         PlayAudio(speaker);

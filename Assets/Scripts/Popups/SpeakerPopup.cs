@@ -6,6 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
+public class Scene
+{
+    public Sprite background;
+    public Sprite main;
+    public Sprite foreground;
+}
+
+[Serializable]
 public class Photo
 {
     public string id;
@@ -35,6 +43,13 @@ public class SpeakerPopup : Popup
         main.gameObject.SetActiveFast(false);
         filter.gameObject.SetActiveFast(false);
         photo.gameObject.SetActiveFast(false);
+    }
+
+    public void PreStart(Scene scene)
+    {
+        SetImage(background, scene.background);
+        SetImage(main, scene.main);
+        SetImage(foreground, scene.foreground);
     }
 
     public void ShowPhoto(string id)
