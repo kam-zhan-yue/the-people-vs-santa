@@ -23,8 +23,8 @@ Krampus: Today is another day we uncover one of Mr.Claus's acts of crime.
 Krampus: This one is related to none other than his previous reindeer.
 You: (I've prepared for this. If there's no hard evidence, we should be in the clear.)
 Krampus: The court may be aware of the incident regarding his reindeer last night.
-Krampus: What you might not know is the horrid state of the poor animal!
-Krampus: I bring forward a surprise witness today who can testify to Santa's mistreatment of the beasts.
+Krampus: What you might not know is the horrid state of the poor animal! #point
+Krampus: I bring forward a surprise witness today who can testify to Santa's mistreatment of the beasts. #point
 You: (A surprise witness?!) #surprise
 Krampus: The prosecution calls forth Ms.Rose Witherspoon!
 Rose: Oh, it is simply my pleasure to be here, Mr.Krampus.
@@ -56,8 +56,8 @@ Rose: It was also visibly exhausted and dehydrated.
 Rose: I suspect it didn't have any water the entire day!
 Rose: These reindeer are looked after by Santa, right? How could he treat them in such a way!
 
-Krampus: It is clear that Mr.Claus is in clear violation of animal rights.
-Krampus: No domesticated reindeer should live under those conditions.
+Krampus: It is clear that Mr.Claus is in clear violation of animal rights. #point
+Krampus: No domesticated reindeer should live under those conditions. #point
 
 Judge: Very well, the defense may begin their cross-examination.
 
@@ -134,7 +134,7 @@ EVENT:EVIDENCE
 + [ATTENDANCE]
     -> ATTENDANCE
     You: This health report!
-    Krampus: The Defense is grasping for straws, Your Honour.
+    Krampus: The Defense is grasping for straws, Your Honour. #point
     -> FAIL_ELVES
 + [CAROLS]
     Krampus: Are you trying to sing to us, twerp?
@@ -272,7 +272,7 @@ You: Buddy! I have reason to believe that it was not Prancer who broke the lock!
 + [You!]
     Buddy: How.. how can you say that!
     Buddy: If you want proof, I got proof!
-    Krampus: Buddy, not yet!
+    Krampus: Buddy, not yet! #point
     Buddy: I have photographic evidence that I was searching for Prancer with all my might!
     Krampus: (He's gone and done it...)
     You: Oh? And what evidence might that be?
@@ -292,7 +292,7 @@ You: Buddy! I have reason to believe that it was not Prancer who broke the lock!
     -> BUDDY_ACCUSE
 
 ===INTERROGATE_PHOTO
-You: (There's something off about this photo... if I look carefully, I can just about see...)
+You: (There's something off about this photo... if I look carefully, I can just about see a trail of something...)
 EVENT:EVIDENCE
 + [COOKIES]
     -> COOKIES_PHOTO
@@ -362,7 +362,7 @@ EVENT:SHAKE
 You: The Christmas Carols you wrote!
 Buddy: No! That's not true
 Krampus: You imbecile, stop talking!
-Krampus: These allegations have gone far enough. You stil lack hard proof of Buddy's involvement.
+Krampus: These allegations have gone far enough. You stil lack hard proof of Buddy's involvement. #point
 You: You're right, Krampus. But that was until he showed me the photo he took.
 You: I couldn't help but notice, they were so similar to something I had seen before.
 You: And I couldn't understand why until now.

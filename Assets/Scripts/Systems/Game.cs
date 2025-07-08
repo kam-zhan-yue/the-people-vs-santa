@@ -6,6 +6,7 @@ using Ink.Runtime;
 using Kuroneko.AudioDelivery;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -108,7 +109,8 @@ public abstract class Game : MonoBehaviour
             popups.FadeOut().OnComplete(() =>
             {
                 Exit();
-                popups.CheckEndGame();
+                popups.HidePopup();
+                SceneManager.LoadScene(NextScene);
             });
         }
     }

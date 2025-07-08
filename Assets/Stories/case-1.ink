@@ -15,7 +15,7 @@ Krampus: Thank you, Your Honour.
 Krampus: The prosecution has evidence that the defendant, this Mr.Claus... is accountable for several counts of burglary...
 Krampus: Animal abuse.
 Krampus: And labour law infringements.
-Krampus: And unfortunately for the poor man, we have witnesses for each and every one of his evil deeds.
+Krampus: And unfortunately for the poor man, we have witnesses for each and every one of his evil deeds.  #point
 Krampus: Today, he shall be brought down to his knees to grovel.
 Judge: Why, how evil! #surprise
 Judge: I-, I mean, ahem, thank you Mr.Krampus. Let us begin this case.
@@ -26,16 +26,16 @@ You: (It's a kid!) #surprise
 Krampus: Boy... state your name and profession to the court.
 Kevin: Yes Mr.Krampus! My name is Kevin McCallister, Mr.Krampus!
 Kevin: Mr.Krampus sir... what's a pwofession? #think
-Krampus: A PROfession, Kevin. You imbecile. #angry
+Krampus: A PROfession, Kevin. You imbecile. #point
 Krampus: It means what year are you in school.
 Kevin: I'm in the second grade, sir!
 Kevin: I'm as old as the third graders, but my mummy wanted me to play in school more! So I'm doing my second grade again!
 You: Isn't he a little young to be testifying?
-Krampus: Shut your trap, heathen. #angry
+Krampus: Shut your trap, heathen. #point
 You: (What?) #surprise
 Krampus: Boy, can you describe what happened at your house on the night of Christmas Eve?
 Kevin: I can! I got so many presents!
-Krampus: Not that! The incident, Kevin. #angry
+Krampus: Not that! The incident, Kevin. #point
 Kevin: Oh yes! Someone broke into our house at night and ate mummy's yummy cookies and drank all our milk! I was so scared!
 Kevin: Now I'll never be able to eat the cookies. My favourite double butter triple chocolate chip cookies...
 Krampus: Now, Kevin, you had evidence to prove that this was indeed the working of the wretched Mr.Claus, right?
@@ -60,8 +60,8 @@ Kevin: After that, I went to my room and hid! I was so scared.
 Kevin: By the time my parents woke up, I told them and they called the police.
 Krampus: The crime photographer at the scene took pictures of these footsteps.
 Krampus: The size of the footprints match the size and boot model of Mr.Claus.
-Krampus: There are not many people with this outrageous foot size.
-Krampus: It is clear that the prepetrator was none other than Mr.Claus!
+Krampus: There are not many people with this outrageous foot size. #point
+Krampus: It is clear that the prepetrator was none other than Mr.Claus! #point
 + [There's no way that's the case!]
     Judge: There shall be no bickering while I am here!
     Judge: That'll be your first warning, young man!
@@ -228,7 +228,7 @@ You: (Is that really enough?)
     Kevin: I... yes he had his boots.
     You: Is it possible that his boots made the footprints?
     Kevin: I don't know! Don't ask me!
-    Krampus: Quiet boy! You don't have to answer his questions.
+    Krampus: Quiet boy! You don't have to answer his questions. #point
     You: (I uncovered something nice there.)
     ~ boot = true
     -> QUESTION
@@ -282,7 +282,7 @@ EVENT:EVIDENCE
     You: Yeap! And the math in here is crazy.
     Krampus: And Santa followed that exact route?
     You: Yeap!
-    Krampus: That notebook shows that Santa has broken into and entered hundreds of millions of homes!
+    Krampus: That notebook shows that Santa has broken into and entered hundreds of millions of homes! #point
     You: (Uh oh. That may have been the wrong choice.)
     You: I have another idea!
     Krampus: Sure you do.
@@ -364,7 +364,7 @@ You: And you know what happens to kids who are on the Naughty List?
 Kevin: No presents! No!
 Judge: Enough. We can adjourn this case for another day when the Naughty List is updated.
 You: But if Kevin doesn't confess now, his name won't get removed from the List.
-Krampus: Hey! Objection!
+Krampus: Hey! Objection! #point
 EVENT:SHAKE
 Kevin: NO! #cry
 
@@ -385,7 +385,7 @@ Kevin: "He’ll think you’ve been naughty, but that's not quite right"
 Kevin: "So munch those cookies to keep his delight!"
 Krampus: That doesn't sound like a real song.
 Kevin: It is too! Every kid knows it!
-Kevin: It almost won a
+Kevin: It almost won a Grammy!
 You: (Hm? Where have I heard that before?)
 Kevin: I'd do anything but being on the Naughty List! I want my present!
 Krampus: You silly little boy.

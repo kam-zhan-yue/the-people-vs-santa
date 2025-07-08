@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e5d1831db612455a82846a8de3523d8
+guid: 322abe28bc69e4587946442057131f85
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: kevin
+  - name: kevin-cry
     originalName: 
-    pivot: {x: 0.503876, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 129
-      height: 108
-    spriteID: 3db9748b379c54c6ab8a99696501a853
+      width: 128
+      height: 109
+    spriteID: 74572ebbf703146e7817523925bfc8df
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -730696381
-    name: kevin
+    guid: 756514138
+    name: kevin-cry
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: kevin
+    - name: kevin-cry
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: -1
+        x: 0
         y: 0
-        width: 129
-        height: 108
-      spriteId: 3db9748b379c54c6ab8a99696501a853
+        width: 128
+        height: 109
+      spriteId: 74572ebbf703146e7817523925bfc8df
     linkedCells: []
     parentIndex: -1
   platformSettings:

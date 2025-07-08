@@ -16,5 +16,8 @@ MonoBehaviour:
   talkId: KRAMPUS
   background: {fileID: -6359319040626184142, guid: c0f2717a09e764c4f8dcaaae15214179, type: 3}
   main: {fileID: 8214766449568160843, guid: 1846418e761aa49779326a6d5312bfec, type: 3}
+  head: {fileID: 0}
   foreground: {fileID: -8845296237834502249, guid: fd7a6da02c4e9416ca64ad136601911a, type: 3}
-  expressions: []
+  expressions:
+  - id: point
+    image: {fileID: 7104503209763867393, guid: 80474234a160e41a88c6a0fc0404dd44, type: 3}

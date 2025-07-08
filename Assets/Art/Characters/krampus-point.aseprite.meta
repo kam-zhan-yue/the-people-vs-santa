@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e5d1831db612455a82846a8de3523d8
+guid: 80474234a160e41a88c6a0fc0404dd44
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: kevin
+  - name: krampus-point
     originalName: 
-    pivot: {x: 0.503876, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 129
-      height: 108
-    spriteID: 3db9748b379c54c6ab8a99696501a853
+      width: 128
+      height: 96
+    spriteID: 785950427d00f4a73895b88a4c1b7a9f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -730696381
-    name: kevin
+    guid: -500234224
+    name: krampus-point
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: kevin
+    - name: krampus-point
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: -1
+        x: 0
         y: 0
-        width: 129
-        height: 108
-      spriteId: 3db9748b379c54c6ab8a99696501a853
+        width: 128
+        height: 96
+      spriteId: 785950427d00f4a73895b88a4c1b7a9f
     linkedCells: []
     parentIndex: -1
   platformSettings:

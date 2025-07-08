@@ -16,13 +16,11 @@ public class Popups : Popup
     [SerializeField] private SpeakerPopup speakerPopup;
     [SerializeField] private DialoguePopup dialoguePopup;
     [SerializeField] private ActionPopup actionPopup;
-    [SerializeField] private GameOverPopup gameOverPopup;
     [FormerlySerializedAs("fadeOut")] [SerializeField] private Image fade;
 
     public DialoguePopup DialoguePopup => dialoguePopup;
     public SpeakerPopup SpeakerPopup => speakerPopup;
     public ActionPopup ActionPopup => actionPopup;
-    public GameOverPopup GameOverPopup => gameOverPopup;
     
     private Vector2 _originalPosition;
 
@@ -37,15 +35,6 @@ public class Popups : Popup
         speakerPopup.Init(game);
         dialoguePopup.Init(game);
         actionPopup.Init(game);
-        gameOverPopup.Init(game);
-    }
-
-    public void CheckEndGame()
-    {
-        speakerPopup.HidePopup();
-        dialoguePopup.HidePopup();
-        actionPopup.HidePopup();
-        gameOverPopup.ShowPopup();
     }
 
     [Button]
