@@ -15,6 +15,8 @@ MonoBehaviour:
   displayName: Santa
   talkId: SANTA
   background: {fileID: -8543008340354805012, guid: 7d513e779e740466382b18ddd661dc1c, type: 3}
-  main: {fileID: 0}
+  main: {fileID: -421787485316133688, guid: c2ca8aef361cb49639e528c4cc4ed7f8, type: 3}
   foreground: {fileID: 8713342605596710326, guid: 8a99e842c53714c198412396bf583ef3, type: 3}
-  expressions: []
+  expressions:
+  - id: jolly
+    image: {fileID: -8585179476810294226, guid: 7d3602dc4022b4495bc3a0a4e0984e37, type: 3}

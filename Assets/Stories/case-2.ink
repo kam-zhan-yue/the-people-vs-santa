@@ -124,38 +124,36 @@ You: The person(s) responsible was actually...
     You: (Hm, did I get that wrong?)
     -> RESPONSIBLE
 * [The elves!]
+    Judge: Ooo!
+    Judge: Ahem, I mean, what makes you say that?
     ->ELVES
 
 ===ELVES===
-Judge: Ooo!
-Judge: Ahem, I mean, what makes you say that?
 You: I have a piece of evidence that will prove my defendant's non-involvement.
 EVENT:EVIDENCE
 + [ATTENDANCE]
     -> ATTENDANCE
     You: This health report!
     Krampus: The Defense is grasping for straws, Your Honour.
-    Judge: I don't tolerate this nonsense. The court is dismissed.
-    You: (I messed that up...)
-    -> END
+    -> FAIL_ELVES
 + [CAROLS]
     Krampus: Are you trying to sing to us, twerp?
-    -> FAIL
+    -> FAIL_ELVES
 + [COOKIES]
     Rose: Oh my, those would be terrible for my figure.
-    -> FAIL
+    -> FAIL_ELVES
 + [OTHER]
     Judge: Aha of course!
     Judge: Wait... what do these prove exactly?
     Krampus: This proves nothing, twerp.
-    -> FAIL
--> DONE
+    -> FAIL_ELVES
 
-===FAIL===
+===FAIL_ELVES===
 Judge: I don't see the connection here...
 Judge: I see no reason to continue! The court is dismissed.
 You: (I messed that up...)
--> END
+You: Hold on a sceond!
+-> ELVES
 
 ===ATTENDANCE
 You: Ms.Witherspoon stated that Prancer showed up at her doorstep at precisely 10:00 this morning.
@@ -315,7 +313,10 @@ Krampus: When can we escape these blasted cookies.
 You: Buddy laid a trail of these cookies, leading Prancer to Rose!
 You: He's the one who broke Prancer out and framed all this.
 Krampus: You imbecile, are you telling me that Santa's reindeers eat cookies?! I find that absolutely preposterous.
-You: (He's right... unless there was something to prove him wrong.)
+->CHOOSE_FOOD
+
+==CHOOSE_FOOD
+You: (I have to find something to show they eat cookies!)
 EVENT:EVIDENCE
 + [REINDEER_FOOD]
  -> SUBMIT_FOOD
@@ -323,7 +324,7 @@ EVENT:EVIDENCE
     Krampus: That shows nothing!
     Judge: Of course reindeers don't eat cookies! You are a buffoon!
     You: (What was it then?!)
-    -> END
+    -> CHOOSE_FOOD
 
 ==SUBMIT_FOOD
 You: This is a box of food given to all of Santa's reindeers. 
@@ -412,7 +413,7 @@ Judge: I've heard enough, this case is closed!
 You: Thank you, ladies and gentlemen.
 You: And have a Merry Christmas.
 EVENT:COMPLETE
--> END
+-> DONE
 
 
 

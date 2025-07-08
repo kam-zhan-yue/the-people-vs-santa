@@ -1,11 +1,10 @@
-EXTERNAL complete()
-EXTERNAL shake()
+
 You: Thank you for meeting me on such short notice, Santa. I know it's a long way away from the North Pole.
 Santa: Ho, ho, ho! Nothing is ever too far for Rudolph and I.
 Santa: Thank you for helping me with this.
 Santa: I know the situation seems bad, but I promise you I'm a good person.
 Santa: You could even say I'm a...
-~shake()
+EVENT:SHAKE
 Santa: JOLLY PERSON! #laugh
 Santa: HO, HO, HO! #laugh
 You: (This is going to be a long day...)
@@ -26,7 +25,7 @@ Santa: Well each year begins the same way.
 Santa: We spend months preparing for the big day.
 Santa: The elves work tirelessly researching the latest presents, monitoring the Naughty List, and taking care of the reindeer.
 You: Ahh, the infamous Naughty List. Is it true that it holds everything bad everyone has ever committed?
-~shake()
+EVENT:SHAKE
 Santa: Of course it does! #laugh
 Santa: I's my pride and joy. Every single name of anyone who has been naughty that year.
 You: That's incredibly powerful. Couldn't it solve literally every single court case?
@@ -118,5 +117,5 @@ Santa: Ho, ho, ho! Anytime, my boy. #laugh
 You: With what you've told me, each of these witnesses could be lying and it is up to me to present the evidence and find contradictions in their testimonies.
 Santa: Thank you.
 Santa: The future of Christmas is counting on you, young man.
-~ complete()
+EVENT:COMPLETE
 -> END

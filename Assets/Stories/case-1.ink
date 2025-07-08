@@ -5,7 +5,14 @@ VAR wrong = false
 
 
 EVENT:PLAY:CASE_START
-
+Judge: The court is now in session for the trial of Mr.Santa Claus.
+Krampus: The prosecution is ready... Your Honour.
+You: (Krampus. He's infamous for his... let's say crude nature.)
+You: (I've got to remain calm.)
+You: The defense is also ready, Your Honour. #confident
+Judge: Mr.Krampus, please give the court your opening statement.
+Krampus: Thank you, Your Honour.
+Krampus: The prosecution has evidence that the defendant, this Mr.Claus... is accountable for several counts of burglary...
 Krampus: Animal abuse.
 Krampus: And labour law infringements.
 Krampus: And unfortunately for the poor man, we have witnesses for each and every one of his evil deeds.
@@ -242,8 +249,8 @@ Judge: What! What's your reasoning? #surprise
     You:  I... I'm not sure actually.
     You: (I should have asked for more details...)
     Judge: Is this a joke?
-    Judge: The case is over then! Let's call it a day.
-    -> END
+    You: Wait, give me more time!
+    -> QUESTION
 - else:
     You: Let me bring out my final piece of evidence.
     -> EVIDENCE
@@ -265,9 +272,9 @@ EVENT:EVIDENCE
     Kevin: I was good all year! I even got a present that night.
     You: You got a present?
     You; (He must have eaten the cookies at midnight, he wouldn't be on the List for that year...)
-    Judge: The case is closed!
-    You: (I was so close...)
-    -> END
+    You: I have another idea!
+    Krampus: You're wasting our time...
+    -> EVIDENCE
 + [NOTEBOOK]
     You: This notebook shows Santa's exact route he took that night! You can see all the houses he visited.
     Judge: That's amazing!
@@ -277,17 +284,18 @@ EVENT:EVIDENCE
     You: Yeap!
     Krampus: That notebook shows that Santa has broken into and entered hundreds of millions of homes!
     You: (Uh oh. That may have been the wrong choice.)
-    Judge: The case is closed It's clear the defendant committed the crimes.
-    -> END
+    You: I have another idea!
+    Krampus: Sure you do.
+    -> EVIDENCE
 + [REINDEER_FOOD]
     You: Feast your eyes on... this feast!
     Krampus: Are you serious? Do we look like animals to you?
     You: Uh...
     Krampus: Where's the connection, dimwit?
     Judge: I can't see it either...
-    Judge: Very well, the case is closed!
     You: (I really messed that up...)
-    -> END
+    You: Let me try again!
+    -> EVIDENCE
 + [PHOTOS]
     You: The photos prove his innocence!
     Judge: What... do they prove exactly?
@@ -296,15 +304,15 @@ EVENT:EVIDENCE
     Krampus: These photos are not dated. It's impossible to know that.
     Judge: Hmmm, I don't see the connection.
     You: (I fumbled that...)
-    Judge: The case is closed!
-    -> END
+    You: Hold on a second!
+    -> EVIDENCE
 +[FOOTPRINTS]
     You: The footprints!
     Krampus: We've seen this before.
     Judge: What is happening here? I've got deja vu.
     You: (Whoops.)
-    Judge: The case is closed!
-    -> END
+    You: One moment please!
+    ->EVIDENCE
 
 ===CORRECT===
 EVENT:STOP:CASE_START

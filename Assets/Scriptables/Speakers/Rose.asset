@@ -15,6 +15,6 @@ MonoBehaviour:
   displayName: Rose
   talkId: ROSE
   background: {fileID: 5316657251154026309, guid: 7d14f0e3f55654066b872afe5796a41c, type: 3}
-  main: {fileID: 0}
+  main: {fileID: 7697027302949218752, guid: 553ce96dc1efe4c87970ba27aed7a9f4, type: 3}
   foreground: {fileID: -6495934891307736610, guid: bf3d3fd360ad1454cb273531792864e0, type: 3}
   expressions: []

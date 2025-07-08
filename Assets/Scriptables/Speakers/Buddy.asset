@@ -15,6 +15,6 @@ MonoBehaviour:
   displayName: Buddy
   talkId: BUDDY
   background: {fileID: 5316657251154026309, guid: 7d14f0e3f55654066b872afe5796a41c, type: 3}
-  main: {fileID: 0}
+  main: {fileID: -7865171835282654524, guid: 22b78392defcf417598861564c41577e, type: 3}
   foreground: {fileID: -6495934891307736610, guid: bf3d3fd360ad1454cb273531792864e0, type: 3}
   expressions: []
