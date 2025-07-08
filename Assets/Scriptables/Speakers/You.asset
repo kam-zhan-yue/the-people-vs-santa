@@ -18,4 +18,6 @@ MonoBehaviour:
   main: {fileID: -4450231695622961261, guid: e1bd70542d3af4536b1e72cdb3cbaa29, type: 3}
   head: {fileID: 1042967085933874031, guid: b4a6f7c4df4ca42fc88879e6e4aee6b8, type: 3}
   foreground: {fileID: -402941942637492453, guid: f749324da42304199becb41b66a4e2ff, type: 3}
-  expressions: []
+  expressions:
+  - id: think
+    image: {fileID: -5594589127495779386, guid: 82fef7a7e549044ee85915b7798f7a83, type: 3}

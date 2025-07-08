@@ -262,7 +262,7 @@ EVENT:EVIDENCE
 + [HEALTH_REPORT]
     -> CORRECT
 + [NAUGHTY_LIST]
-    You: The Naughty List reveals all! #confident
+    You: The Naughty List reveals all! #think
     You: Kevin McCallister is...
     You: Is not here! #surprise
     Kevin: Hee hee hee.
@@ -276,7 +276,7 @@ EVENT:EVIDENCE
     Krampus: You're wasting our time...
     -> EVIDENCE
 + [NOTEBOOK]
-    You: This notebook shows Santa's exact route he took that night! You can see all the houses he visited.
+    You: This notebook shows Santa's exact route he took that night! You can see all the houses he visited. #think
     Judge: That's amazing!
     Krampus: Are you telling me that the notebook you are holding shows all the houses Santa visited during Christmas night?
     You: Yeap! And the math in here is crazy.
@@ -288,7 +288,7 @@ EVENT:EVIDENCE
     Krampus: Sure you do.
     -> EVIDENCE
 + [REINDEER_FOOD]
-    You: Feast your eyes on... this feast!
+    You: Feast your eyes on... this feast! #think
     Krampus: Are you serious? Do we look like animals to you?
     You: Uh...
     Krampus: Where's the connection, dimwit?
@@ -297,7 +297,7 @@ EVENT:EVIDENCE
     You: Let me try again!
     -> EVIDENCE
 + [PHOTOS]
-    You: The photos prove his innocence!
+    You: The photos prove his innocence! #think
     Judge: What... do they prove exactly?
     Krampus: These are just photos of Santa... and Mrs.Claus?
     You: They, uh, show he's not at the scene of the crime?
@@ -307,7 +307,7 @@ EVENT:EVIDENCE
     You: Hold on a second!
     -> EVIDENCE
 +[FOOTPRINTS]
-    You: The footprints!
+    You: The footprints! #think
     Krampus: We've seen this before.
     Judge: What is happening here? I've got deja vu.
     You: (Whoops.)
@@ -321,11 +321,11 @@ EVENT:EVIDENCE
 
 ===CORRECT===
 EVENT:STOP:CASE_START
-You: This report shows all of Santa's health conditions.
+You: This report shows all of Santa's health conditions. #think
 Krampus: And that is relevant to the cookies, how?
-You: Look closely. Santa has been a Type 2 Diabetic for many years!
-You: This health report shows that his condition has been fairly stable, with no lapses in blood sugar.
-You: That's only possible if a Type 2 Diabetic doesn't consume sugar for an extended period.
+You: Look closely. Santa has been a Type 2 Diabetic for many years! #think
+You: This health report shows that his condition has been fairly stable, with no lapses in blood sugar. #think
+You: That's only possible if a Type 2 Diabetic doesn't consume sugar for an extended period. #think
 Krampus: One cookie and a glass of milk won't show up on a health report!
 You: That may be true for an ordinary cookie...
 

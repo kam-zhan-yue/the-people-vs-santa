@@ -133,9 +133,6 @@ You: I have a piece of evidence that will prove my defendant's non-involvement.
 EVENT:EVIDENCE
 + [ATTENDANCE]
     -> ATTENDANCE
-    You: This health report!
-    Krampus: The Defense is grasping for straws, Your Honour. #point
-    -> FAIL_ELVES
 + [CAROLS]
     Krampus: Are you trying to sing to us, twerp?
     -> FAIL_ELVES
@@ -156,9 +153,9 @@ You: Hold on a sceond!
 -> ELVES
 
 ===ATTENDANCE
-You: Ms.Witherspoon stated that Prancer showed up at her doorstep at precisely 10:00 this morning.
-You: At 9:40 today, we took attendance of the elves.
-You: And it just so happened that the elf responsible for Prancer was missing during this time!
+You: Ms.Witherspoon stated that Prancer showed up at her doorstep at precisely 10:00 this morning. #think
+You: At 9:40 today, we took attendance of the elves. #think
+You: And it just so happened that the elf responsible for Prancer was missing during this time! #think
 Judge: Oh my! How suspicious!
 Krampus: That proves nothing, twerp.
 Krampus: And even if it did, that elf you mentioned happens to be here today.
@@ -309,7 +306,7 @@ Buddy: Of course it wasn't me!
 
 EVENT:SHAKE
 EVENT:PLAY:CASE_BREAK
-You: It was the double butter triple chocolate chip cookies!
+You: It was the double butter triple chocolate chip cookies! #think
 Judge: Whaaaat?!
 Krampus: When can we escape these blasted cookies.
 You: Buddy laid a trail of these cookies, leading Prancer to Rose!
@@ -329,9 +326,9 @@ EVENT:EVIDENCE
     -> CHOOSE_FOOD
 
 ==SUBMIT_FOOD
-You: This is a box of food given to all of Santa's reindeers. 
+You: This is a box of food given to all of Santa's reindeers.  #think
 Buddy: Wait, don't-
-You: But if I open them...
+You: But if I open them... #think
 EVENT:SHAKE
 You: They are full of cookies!
 Judge: I can't believe it!
@@ -359,7 +356,7 @@ EVENT:EVIDENCE
 
 ==SUBMIT_CAROLS
 EVENT:SHAKE
-You: The Christmas Carols you wrote!
+You: The Christmas Carols you wrote! #think
 Buddy: No! That's not true
 Krampus: You imbecile, stop talking!
 Krampus: These allegations have gone far enough. You stil lack hard proof of Buddy's involvement. #point
@@ -379,9 +376,10 @@ EVENT:EVIDENCE
     -> PHOTOS
 
 ===SUBMIT_PHOTOS
-Buddy: I've never seen those before!
-You: Santa has been receiving threats attached with these photos.
-You: Look at the film used! They match Buddy's previous photos!
+You: I'm sure you've seen these before, Buddy. #think
+Buddy: I've never seen those in my life!
+You: Santa has been receiving threats attached with these photos. #think
+You: Look at the film used! They match Buddy's previous photos! #think
 
 EVENT:SHAKE
 Buddy: NO!
