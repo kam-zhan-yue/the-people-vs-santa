@@ -147,7 +147,7 @@ public class DialoguePopup : Popup
     private void SetSpeaker(string speaker)
     {
         nameText.gameObject.SetActiveFast(!string.IsNullOrEmpty(speaker));
-        nameText.SetText(speaker);
+        nameText.SetText(_game.database.TryGetSpeaker(speaker, out Speaker speak) ? speak.displayName : speaker);
     }
 
     private void PlayDialogue(string dialogue)

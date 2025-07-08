@@ -19,6 +19,7 @@ public class Speaker : ScriptableObject
     public string talkId;
     public Sprite background;
     public Sprite main;
+    public Sprite head;
     public Sprite foreground;
     
     [TableList] public List<SpeakerExpression> expressions = new();

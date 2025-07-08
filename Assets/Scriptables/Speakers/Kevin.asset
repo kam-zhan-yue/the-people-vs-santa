@@ -16,5 +16,6 @@ MonoBehaviour:
   talkId: KEVIN
   background: {fileID: 5316657251154026309, guid: 7d14f0e3f55654066b872afe5796a41c, type: 3}
   main: {fileID: 2439850238192699154, guid: 5e5d1831db612455a82846a8de3523d8, type: 3}
+  head: {fileID: 1042967085933874031, guid: b4a6f7c4df4ca42fc88879e6e4aee6b8, type: 3}
   foreground: {fileID: -6495934891307736610, guid: bf3d3fd360ad1454cb273531792864e0, type: 3}
   expressions: []

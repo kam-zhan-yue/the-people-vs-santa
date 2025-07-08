@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a289a1108a2b841a3a8e93d9eb0645aa, type: 3}
   m_Name: You
   m_EditorClassIdentifier: 
-  displayName: You
+  displayName: Jack
   talkId: YOU
   background: {fileID: 15265987429006280, guid: 32128d74315fd43238d8f90523cc8f2b, type: 3}
   main: {fileID: -4450231695622961261, guid: e1bd70542d3af4536b1e72cdb3cbaa29, type: 3}
+  head: {fileID: 1042967085933874031, guid: b4a6f7c4df4ca42fc88879e6e4aee6b8, type: 3}
   foreground: {fileID: -402941942637492453, guid: f749324da42304199becb41b66a4e2ff, type: 3}
   expressions: []

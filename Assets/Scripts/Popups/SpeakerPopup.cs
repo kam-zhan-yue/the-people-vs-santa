@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Kuroneko.UIDelivery;
 using Kuroneko.UtilityDelivery;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [Serializable]
@@ -27,6 +28,8 @@ public class SpeakerPopup : Popup
     [SerializeField] private Image main;
     [SerializeField] private Image foreground;
     [SerializeField] private Image photo;
+    [SerializeField] private RectTransform window;
+    [SerializeField] private Image windowImage;
     [SerializeField] private RectTransform filter;
     
     private Game _game;
@@ -43,6 +46,7 @@ public class SpeakerPopup : Popup
         main.gameObject.SetActiveFast(false);
         filter.gameObject.SetActiveFast(false);
         photo.gameObject.SetActiveFast(false);
+        window.gameObject.SetActiveFast(false);
     }
 
     public void PreStart(Scene scene)
@@ -74,16 +78,25 @@ public class SpeakerPopup : Popup
 
     public void Show(string speakerId)
     {
-        if (_game.database.TryGetSpeaker(speakerId, out Speaker speaker))
+        if (!_game.database.TryGetSpeaker(speakerId, out Speaker speaker))
         {
-            SetImage(background, speaker.background);
-            SetImage(foreground, speaker.foreground);
-            SetImage(main, speaker.main);
-            CheckTags(speaker);
+            Debug.LogError($"Unable to process speaker {speakerId}");
+        }
+        
+        // If it is us in the interrogation room, show the window instead
+        if (speakerId == "You" && SceneManager.GetActiveScene().name == "Introduction")
+        {
+            window.gameObject.SetActiveFast(true);
+            windowImage.sprite = speaker.main;
+            SetImage(windowImage, speaker.head);
         }
         else
         {
-            Debug.Log($"Unable to process speaker {speakerId}");
+            window.gameObject.SetActiveFast(false);
+            SetImage(main, speaker.main);
+            CheckTags(main, speaker);
+            SetImage(background, speaker.background);
+            SetImage(foreground, speaker.foreground);
         }
     }
 
@@ -93,7 +106,7 @@ public class SpeakerPopup : Popup
         image.sprite = sprite;
     }
 
-    private void CheckTags(Speaker speaker)
+    private void CheckTags(Image image, Speaker speaker)
     {
         List<string> tags = _game.GetCurrentTags();
         Dictionary<string, SpeakerExpression> expressionDict = speaker.GetExpressionDictionary();
@@ -101,7 +114,7 @@ public class SpeakerPopup : Popup
         {
             if (expressionDict.TryGetValue(tags[i], out SpeakerExpression expression))
             {
-                SetImage(main, expression.image);
+                SetImage(image, expression.image);
             }
         }
     }
