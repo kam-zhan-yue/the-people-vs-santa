@@ -76,6 +76,11 @@ Krampus: It is clear that the prepetrator was none other than Mr.Claus! #point
 Judge: The court accepts this as evidence!
 EVIDENCE:FOOTPRINTS
 
+Krampus: Although empty now, the box of cookies at the scene was also taken in.
+Krampus: Unfortunately, Santa's grimey fingerprints were not found on them.
+
+EVIDENCE:COOKIES
+
 Judge: Now, the defense may begin their cross-examination.
 Judge: (Big, fancy words, these are!) #unsure
 
@@ -150,11 +155,11 @@ Krampus: After all, no one expects an old fat man to break in through their chim
 Judge: That's true!
 You: (Dammit, what can I do now?)
 + [Keep pushing]
-    You: You mentioned your mother makes these cookies. What kind of cookies are they?
-    Kevin: They're my mum's famous double butter triple chocolate chip cookies!
+    You: hat kind of cookies are they?
+    Kevin: They're the world famous double butter triple chocolate chip cookies!
     Kevin: They're full of butter and chocolate and they're so super yummy!
-    You: I see. And does your mother make this every year?
-    Kevin: Yeah! Although she only makes the double butter triple chocolate chip cookies once a year.
+    You: I see. And how often do you eat these cookies?
+    Kevin: Only during Christmas, I only wish the double butter triple chocolate chip cookies all year round!
     Krampus: You don't have to say it's full name every time, you silly boy.
     Kevin: But they're my favourite cookies!
     Kevin: I would do anything to eat my mum's double butter triple chocolate chip cookies!
@@ -337,8 +342,8 @@ You: Santa was not the culprit. Kevin is!
 Kevin: Urk!
 Kevin: That's not true! Even if Santa didn't eat them, how do you know I did?
 { cookies == true:
-    You: Young Kevin here stated that "he would do anything to eat his mother's cookies".
-    Krampus: So? It sounds like a boy who cherishes his mother's cooking.
+    You: Young Kevin here stated that "he would do anything to eat the cookies".
+    Krampus: So? It sounds like a boy who's got an unhealthy addiction.
     You: That may be true, but I have reason to believe otherwise.
 }
 { parents == true:
